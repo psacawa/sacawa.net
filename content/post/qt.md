@@ -2,7 +2,7 @@
 title: "Qt Notatki"
 description: "Zgromadzone notatki o Qt"
 date: 2023-11-20
-tags: ["qt", "c++", "gui"]
+tags: ["pl", "qt", "c++", "gui"]
 categories: ["Notes"]
 ---
 
@@ -24,14 +24,14 @@ layout->addWidget(button); \\ działa
 Jest parę podstawowych wartości dla `QWidget::windowType() == QWidget::windowFlags() & Qt::WindowType_Mask`:
 
 - `Qt::Widget`: zwykły widżet który ma rodzica
-- `Qt::Window`: widżet który jest oknem  `w->isWindow() := w->windowType() & Qt::Window`. Nie musi być sierotą, ale tak zwykle jest.
-- `Qt::Dialog`: okno które będzie dekorowane jak dialog `QDialog`.  `QMenu`
+- `Qt::Window`: widżet który jest oknem `w->isWindow() := w->windowType() & Qt::Window`. Nie musi być sierotą, ale tak zwykle jest.
+- `Qt::Dialog`: okno które będzie dekorowane jak dialog `QDialog`. `QMenu`
 - `Qt::Popup`: okno które będzie dekorowane jak dialog `QDialog`. Nie do końca muśi być sięrotą.
 - `Qt::Tool`: pasek narzędzi `QToolBar` odłączone od menu staje się takim oknem.
 - `Qt::ToolTip`: ...
 - `Qt::SubWindow`: dla MDI
 
-Pozostałe wartości są mało ważne. Ważnym punktem jest to że okna nie do końca muśi być sięrotami, ale mogą nimi być. 
+Pozostałe wartości są mało ważne. Ważnym punktem jest to że okna nie do końca muśi być sięrotami, ale mogą nimi być.
 
 ### Aktywność
 
@@ -262,16 +262,16 @@ QKeyEvent(KeyRelease, Key_F, text="f") MyPushButton(0x561d366611f0)
 Wciśnięcie klawiszy dostarca zdarzenie do widźetu ze skupieniem (`QPushButton`).
 
 ```
-[0] QPushButton::keyPressEvent(QKeyEvent*)+0 at widgets/widgets/qpushbutton.cpp:420
-[1] QWidget::event(QEvent*)+603 at widgets/kernel/qwidget.cpp:9006
-[2] QAbstractButton::event(QEvent*)+199 at widgets/widgets/qabstractbutton.cpp:931
-[3] QPushButton::event(QEvent*)+51 at widgets/widgets/qpushbutton.cpp:683
-[4] QApplicationPrivate::notify_helper(QObject*, QEvent*)+141 at widgets/kernel/qapplication.cpp:3287
-[5] QApplication::notify(QObject*, QEvent*)+1149 at widgets/kernel/qapplication.cpp:2715
-[6] QCoreApplication::notifyInternal2(QObject*, QEvent*)+202 at corelib/kernel/qcoreapplication.cpp:1121
-[7] QCoreApplication::forwardEvent(QObject*, QEvent*, QEvent*)+36 at corelib/kernel/qcoreapplication.cpp:1136
-[8] QWidgetWindow::handleKeyEvent(QKeyEvent*)+91 at widgets/kernel/qwidgetwindow.cpp:669
-[9] QWidgetWindow::event(QEvent*)+352 at widgets/kernel/qwidgetwindow.cpp:234
+- [0] QPushButton::keyPressEvent(QKeyEvent*)+0 at widgets/widgets/qpushbutton.cpp:420
+- [1] QWidget::event(QEvent*)+603 at widgets/kernel/qwidget.cpp:9006
+- [2] QAbstractButton::event(QEvent*)+199 at widgets/widgets/qabstractbutton.cpp:931
+- [3] QPushButton::event(QEvent*)+51 at widgets/widgets/qpushbutton.cpp:683
+- [4] QApplicationPrivate::notify_helper(QObject*, QEvent*)+141 at widgets/kernel/qapplication.cpp:3287
+- [5] QApplication::notify(QObject*, QEvent*)+1149 at widgets/kernel/qapplication.cpp:2715
+- [6] QCoreApplication::notifyInternal2(QObject*, QEvent*)+202 at corelib/kernel/qcoreapplication.cpp:1121
+- [7] QCoreApplication::forwardEvent(QObject*, QEvent*, QEvent*)+36 at corelib/kernel/qcoreapplication.cpp:1136
+- [8] QWidgetWindow::handleKeyEvent(QKeyEvent*)+91 at widgets/kernel/qwidgetwindow.cpp:669
+- [9] QWidgetWindow::event(QEvent*)+352 at widgets/kernel/qwidgetwindow.cpp:234
 ```
 
 Ślad stosu przed `QApplication::notify` dla `KeyPressEvent` na platformie `xcb`:

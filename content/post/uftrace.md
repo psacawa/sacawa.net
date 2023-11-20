@@ -2,9 +2,10 @@
 title: "uftrace Notatki"
 description: "Przykłądowe Użycia uftrace"
 date: 2023-11-20
-tags: ["uftrace", "linux"]
+tags: ["pl", "uftrace", "linux"]
 categories: ["Notes"]
 ---
+
 # Przykłądy
 
 Filtracja i argumenty dla danej funkcji (c++): `-F/--filter` śledzą stos podczas wywołania, a `-C/--called-filter` wyśwlietlają stos nad wywołaniem.

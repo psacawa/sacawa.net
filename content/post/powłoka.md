@@ -1,10 +1,11 @@
 ---
-title: "Skrypty powłoki `[ba|z]sh` /inne Notatki"
+title: "Skrypty powłoki sh|bash|zsh /inne Notatki"
 description: "Ogólne notatki o powłoce oraz przykłądy"
 date: 2023-11-20
-tags: ["shell", "linux"]
+tags: ["pl", "shell", "linux"]
 categories: ["Notes"]
 ---
+
 ## /bin/getopt
 
 Przykład:

@@ -2,9 +2,10 @@
 title: "LLVM/Clang Notatki"
 description: "Zgromadzone notatki o środowisku LLVM oraz Clang"
 date: 2023-11-20
-tags: ["llvm", "clang", "c++", "c"]
+tags: ["pl", "llvm", "clang", "c++", "c"]
 categories: ["Notes"]
 ---
+
 # LLVM
 
 ## Kompilacja wtyczek
@@ -31,6 +32,7 @@ Uruchamiamy wtyczkę następująco:
 ## Przełożenie polecenia z gcc
 
 Odpowiednik `gcc -Wl,-rpath=.` (tylko jeden argument na raz):
+
 ```
 clang main.c -Xlinker -rpath=. -o main
 ```

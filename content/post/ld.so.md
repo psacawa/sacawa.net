@@ -2,9 +2,10 @@
 title: "Konsolidator dynamiczny glibc ld.so Notatki"
 description: "Zgromadzone notatki o konsolidatorze dynamicznym w środowisku GNU"
 date: 2023-11-20
-tags: ["linux", "gnu", "ld.so"]
+tags: ["pl", "linux", "gnu", "ld.so"]
 categories: ["Notes"]
 ---
+
 ## Konfiguracja
 
 ### Przedładowanie (ang. preload)
@@ -48,8 +49,7 @@ LD_PRELOAD='${ORIGIN}/../lib/libtetradactyl-dynamic-probe.so' /somepath/bin/prog
 
 odszukuje `/somepath/lib/libtetradactyl-dynamic-probe.so`.
 
-*UWAGA*; Jeśli używamy `ORIGIN` w `dlopen` w obecności `LD_PRELOAD`, zdaje się przyechwytać `ORIGIN`?  Działa tak ze względu na implementacje dynamicznch tokenów jak `ORIGIN`: podczas swoje działanie `dlopen` odzczytuje stos po to by podstawiać zmmienny jak `ORIGIN`. Zatem jest przyechwytamy to wywołanie w `libpreload.so`, to `dlopen` znajdzie podstawi `ORIGIN` jako pochodzenie tego przedładowanej  biblioteki.
-
+_UWAGA_; Jeśli używamy `ORIGIN` w `dlopen` w obecności `LD_PRELOAD`, zdaje się przyechwytać `ORIGIN`? Działa tak ze względu na implementacje dynamicznch tokenów jak `ORIGIN`: podczas swoje działanie `dlopen` odzczytuje stos po to by podstawiać zmmienny jak `ORIGIN`. Zatem jest przyechwytamy to wywołanie w `libpreload.so`, to `dlopen` znajdzie podstawi `ORIGIN` jako pochodzenie tego przedładowanej biblioteki.
 
 ### Przestrzenie Nazw (ang. namespaces)
 
@@ -92,6 +92,6 @@ Zakresy (ang. scopes) są opisane przez `struct r_scope_elem`. Są to po prostu 
 
 # Przypisy
 
-[0] dlopen(3)
-[1] `glibc/sysdeps/generic/ldsodefs.h`
-[2] `glibc/elf/link.h`
+- [0] dlopen(3)
+- [1] `glibc/sysdeps/generic/ldsodefs.h`
+- [2] `glibc/elf/link.h`

@@ -2,9 +2,10 @@
 title: "USB Notatki"
 description: "Zgromadzone notatki o USB"
 date: 2023-11-20
-tags: ["usb", "kernel"]
+tags: ["pl", "usb", "kernel"]
 categories: ["Notes"]
 ---
+
 # USB
 
 ## Architektura Logiczna

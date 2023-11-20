@@ -2,7 +2,7 @@
 title: "wireshark Notatki"
 description: "Zgromadzone notatki o wireshark"
 date: 2023-11-20
-tags: ["networking", "sysadmin", "wireshark"]
+tags: ["pl", "networking", "sysadmin", "wireshark"]
 categories: ["Notes"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Winapi Notatki"
 description: "Zgromadzone notatki o Windowsie"
 date: 2023-11-20
-tags: ["winapi", "c++"]
+tags: ["pl", "winapi", "c++"]
 categories: ["Notes"]
 ---
 

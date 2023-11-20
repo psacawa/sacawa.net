@@ -2,9 +2,10 @@
 title: "gcov Notatki"
 description: "Zgromadzone notatki o gcov"
 date: 2023-11-20
-tags: ["gcov", "gcc", "c++", "c"]
+tags: ["pl", "gcov", "gcc", "c++", "c"]
 categories: ["Notes"]
 ---
+
 ```
 g++	-g -Wall -std=c++17 -coverage main.cpp -o main
 ```

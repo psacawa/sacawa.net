@@ -2,9 +2,10 @@
 title: "nasm Notatki"
 description: "Zgromadzone notatki o assemblerze nasm"
 date: 2023-11-20
-tags: ["nasm", "assembly", "x86"]
+tags: ["pl", "nasm", "assembly", "x86"]
 categories: ["Notes"]
 ---
+
 # NASM
 
 ## Hello World
@@ -32,8 +33,8 @@ _start:
 
 ## Ucieczki w Stylu C
 
-Aby użyć '\n' jako koniec linii, trzeba  otoczyć go backtikami, czyli
-  
+Aby użyć '\n' jako koniec linii, trzeba otoczyć go backtikami, czyli
+
 ```nasm
 section .data
   fmt db `hello %s\n\0`
@@ -60,6 +61,6 @@ some_func:
   enter %$localsize, 0
   // push $rbp; $rsp := $rbp - %$localsize;
   mov DWORD [i], 0xdeadbeef
-  leave 
+  leave
   %pop
 ```

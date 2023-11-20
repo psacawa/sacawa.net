@@ -2,15 +2,16 @@
 title: "Vim Notatki"
 description: "Zgromadzone notatki o (neo)?vim"
 date: 2023-11-20
-tags: ["vim"]
+tags: ["pl", "vim"]
 categories: ["Notes"]
 ---
+
 # (Neo)Vim
 
 ## VimScript
 
-Opcje jako zmienne:  `let b:ft = &ft`
- 
+Opcje jako zmienne: `let b:ft = &ft`
+
 <!-- TODO 20/08/20 psacawa: finish this -->
 
 ## Wtyczki
@@ -35,7 +36,6 @@ Opcje dla urywków są opisane w podrozdziale `UltiSnips-transformations`. Najwa
 
 ## Autopolecenia i Autogroupy (ang. autocommand/autogroup)
 
-
 ````
 augroup AutoZapisPlikGrupa
   autocmd TextChanged,InsertLeave * if &buftype == "" | write | endif
@@ -47,3 +47,4 @@ By usunąć grupę, trzeba najpierw ręcznie usunąć autopolecenie w nim zawart
 autocmd! AutoZapisPlikGrupa TextChanged,InsertLeave
 augroup! AutoZapisPlikGrupa
 ```
+````

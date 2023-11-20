@@ -2,7 +2,7 @@
 title: "Dbus Notatki"
 description: "Zgromadzone notatki o Dbus"
 date: 2023-11-20
-tags: ["dbus", "linux"]
+tags: ["pl", "dbus", "linux"]
 categories: ["Notes"]
 ---
 

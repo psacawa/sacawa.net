@@ -2,9 +2,10 @@
 title: "C++ Notatki"
 description: "Zgromadzone notatki o C++"
 date: 2023-11-20
-tags: ["c++"]
+tags: ["pl", "c++"]
 categories: ["Notes"]
 ---
+
 # Wszytko Wirtualne
 
 ## Wirtualna Baza
@@ -24,7 +25,7 @@ demo.cpp:(.text._ZN11StepCounterC2Ei[_ZN11StepCounterC5Ei]+0x22): undefined refe
 
 Błąd konsolidatora. Kompilator nie narzeka. Standard wymaga definicji wszystkich wirtualnych nieabstrakcyjnych metod, które są zdefiniowane. Zwykle ten błąd wynika z deklaracji destruktorów bez odpowiedniej definicji. [0]
 
-[0] https://gcc.gnu.org/faq.html#vtables
+- [0] https://gcc.gnu.org/faq.html#vtables
 
 ### Konstructor kopiujący a przypisanie z przenoszeniem
 

@@ -2,9 +2,10 @@
 title: "gpg Notatki"
 description: "Zgromadzone notatki o gpg"
 date: 2023-11-20
-tags: ["gpg", "cryptography"]
+tags: ["pl", "gpg", "cryptography"]
 categories: ["Notes"]
 ---
+
 # Powłoka gpg
 
 `gpg --edit-key ${ID_LUB_UID_KLUCZA}`
@@ -82,4 +83,4 @@ Prywatne klucze przechowane w `$GNUPGHOME/private-keys-v1.d/`. Te z ssh są teks
 <!-- TODO 10/11/20 psacawa: ssb# ? -->
 <!-- TODO 10/11/20 psacawa:--export-secret-subkey makes unusable?  -->
 
-[0] https://blog.djoproject.net/2020/05/03/main-differences-between-a-gnupg-fingerprint-a-ssh-fingerprint-and-a-keygrip/
+- [0] https://blog.djoproject.net/2020/05/03/main-differences-between-a-gnupg-fingerprint-a-ssh-fingerprint-and-a-keygrip/

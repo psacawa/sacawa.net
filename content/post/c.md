@@ -2,9 +2,10 @@
 title: "C Notatki"
 description: "Zgromadzone notatki o C"
 date: 2023-11-20
-tags: ["c"]
+tags: ["pl", "c"]
 categories: ["Notes"]
 ---
+
 # Preprocesor
 
 Działanie `#include` jest definiowane przez implementacje, natomiast w praktyce mamy:

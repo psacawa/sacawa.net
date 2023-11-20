@@ -2,9 +2,10 @@
 title: "SQL Notatki"
 description: "Zgromadzone notatki o SQL"
 date: 2023-11-20
-tags: ["sql", "postgres", "sqlite"]
+tags: ["pl", "sql", "postgres", "sqlite"]
 categories: ["Notes"]
 ---
+
 # SQL
 
 ## PostgreSQL

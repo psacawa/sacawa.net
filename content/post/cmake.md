@@ -2,9 +2,10 @@
 title: "CMake Notatki"
 description: "Zgromadzone notatki o CMake"
 date: 2023-11-20
-tags: ["cmake", "c++"]
+tags: ["pl", "cmake", "c++"]
 categories: ["Notes"]
 ---
+
 ### Wskazówki
 
 Debugowanie wyszukiwanie modułów (nieudokementowana zmienna):

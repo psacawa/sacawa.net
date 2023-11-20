@@ -2,9 +2,10 @@
 title: "Notatki o Jądrze Linux"
 description: "Zgromadzone notatki o jądrze Linuksa"
 date: 2023-11-20
-tags: ["kernel", "linux"]
+tags: ["pl", "kernel", "linux"]
 categories: ["Notes"]
 ---
+
 # sysfs
 
 Aby (roz)wiązać sterownik od urządzenie, uzywamy pliki bind/unbind w systemie plików sysfs:

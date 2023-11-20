@@ -2,10 +2,11 @@
 title: "ELF Notatki"
 description: "Zgromadzone notatki o formacie binarnym ELF"
 date: 2023-11-20
-tags: ["elf", "reversing", "linux"]
+tags: ["pl", "elf", "reversing", "linux"]
 categories: ["Notes"]
 ---
-# ELF 
+
+# ELF
 
 ## Sekcje w ELFach
 
@@ -30,8 +31,8 @@ które te adresy wskazują na GOT, gdzie albo będzie prawdziwy adres celu, lub 
 Pierwsze trzy zapisy są specjalne:
 
 0. qword przesunięcie do sekcji PT_DYNAMIC
-1. "Obj_Entry used to indicate the current component  # set by ld.so" wg. [0]. Obserwowano wartość 0.
-2. `_rtld_bind_start`  ustawione przez ld.so . Obserwowano wartość 0.
+1. "Obj_Entry used to indicate the current component # set by ld.so" wg. [0]. Obserwowano wartość 0.
+2. `_rtld_bind_start` ustawione przez ld.so . Obserwowano wartość 0.
 
 Dalej mamy zapisy wobec których mamy relokację R_X86_64_JUMP_SLOT
 
@@ -45,11 +46,12 @@ Rutyny PLT kiedy używana jest chętny (nieleniwe) wiązanie, jak w przypadku fl
 
 ## Relokacje
 
-Zwykle mamy relokacja (przeniesiena) z składnikami (ang. addends). Zatem wszystko "rela" zamiast "rel".  W plikach obiektowych przenoszalnych mamy .rela.$sekcja. Konsolidator statyczny /bin/ld ich zastostuje. Natomiast w plikach uruchamialnych  mamy .rela.plt oraz .rela.dyn
+Zwykle mamy relokacja (przeniesiena) z składnikami (ang. addends). Zatem wszystko "rela" zamiast "rel". W plikach obiektowych przenoszalnych mamy .rela.$sekcja. Konsolidator statyczny /bin/ld ich zastostuje. Natomiast w plikach uruchamialnych mamy .rela.plt oraz .rela.dyn
 
 <!-- TODO 27/06/20 psacawa: Jakie mają znaczenia? -->
 
 Struktura Elf_Rela ma atrybuty:
+
 - przesunięcie: przesunięcie w komponencie gdzie relokacja zostanie przeprowadzona
 - informacja: zawiera dwa dane, mianowicie
   - pozycja w tablicy symboli wzgledęm którego przenoszenie zostanie przeprowadzone. Jeśli wartość symboli w wchodzi w rachunek, będzie 0.
@@ -66,8 +68,9 @@ Struktura Elf_Rela ma atrybuty:
 Składa się listy zapisów informacji debugowania z okresloną etykietką `DW_TAG_*` które opisują pewien element źródłowego programu, i które maja zestaw powiązanych atrybutów `DW_AT_*` które są ich charakterystykami. N.b. etykietka `DW_TAG_*` opisuje typ elementu syntaktycznego, natomiast `DW_AT_type` opisuje typ z punktu widzenia systemu typów programu. Zatem: `typedef MojeInt int;` wyprodukuje `DW_TAG_typedef` z `DW_AT_name="MojeInt"`, `DW_AT_type=int` (nie testowane).
 
 To wszystko jest zapisane w segentach pliku ELF `.debug_*`
+
 <!-- TODO 03/08/20 psacawa: opisz sekcje  `.debug_*` -->
 
 ## Przpisy
 
-[0] https://maskray.me/blog/2021-09-19-all-about-procedure-linkage-table
+- [0] https://maskray.me/blog/2021-09-19-all-about-procedure-linkage-table

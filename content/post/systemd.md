@@ -2,9 +2,10 @@
 title: "systemd Notatki"
 description: "Zgromadzone notatki o systemd"
 date: 2023-11-20
-tags: ["systemd", "linux", "sysadmin"]
+tags: ["pl", "systemd", "linux", "sysadmin"]
 categories: ["Notes"]
 ---
+
 # systemctl
 
 Uaktualnij środowisko z którym jednostki zostaną uruchowmione:
