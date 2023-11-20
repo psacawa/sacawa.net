@@ -80,3 +80,11 @@ href = "https://unsplash.com"
 [[params.addtional_menus]]
 title = "ABOUT"
 href = "/about/"
+
+
+[deployment]
+[[deployment.targets]]
+name = "s3"
+URL = "s3://886185890074-sacawa.net?region=us-east-1"
+cloudFrontDistributionID = "E1GPT2RZD6COP"
+
