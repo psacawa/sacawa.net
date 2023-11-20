@@ -2,6 +2,7 @@ baseURL = 'https://sacawa.net'
 theme = 'hugo-theme-cleanwhite'
 languageCode = 'en'
 defaultContentLanguage = "en"
+paginate = 20
 
 [languages.en]
 title = "sacawa.net - Home Page of Paweł Sacawa"
@@ -36,7 +37,7 @@ sidebar_about_description = "Web backend, systems programming on POSIX platform,
 sidebar_avatar = "img/psacawa.jpg"
 
 featured_tags = true  # ?
-featured_condition_size = 1
+# featured_condition_size = 1
 
 disqus_site = ""
 

@@ -5,3 +5,5 @@ layout: page
 ---
 
 Interested in systems programming on Linux.
+
+[CV](/pdf/cv.pdf)
