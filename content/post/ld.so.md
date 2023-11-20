@@ -2,7 +2,7 @@
 title: "Konsolidator dynamiczny glibc ld.so Notatki"
 description: "Zgromadzone notatki o konsolidatorze dynamicznym w środowisku GNU"
 date: 2023-11-20
-tags: ["pl", "linux", "gnu", "ld.so"]
+tags: ["pl", "linux", "gnu", "ld.so", "glibc"]
 categories: ["Notes"]
 ---
 

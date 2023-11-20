@@ -21,7 +21,9 @@ sidebar_about_description = "Backend, programowanie, matematyka. Kolejny haker."
 date = [':filename', ':default']
 
 [params]
-header_image = "img/Beach-Renato-Giordanelli.jpg"
+# header_image = "img/Beach-Renato-Giordanelli.jpg"
+main_page_image = "img/Beach-Renato-Giordanelli.jpg"
+generic_image = "img/home-bg-jeep.jpg"
 SEOTitle = "sacawa.net"
 description = "Linux etc."
 keyword = "Paweł Sacawa, Paul Sacawa, Linux, Systems Programming"
