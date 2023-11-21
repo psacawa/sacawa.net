@@ -1,6 +1,6 @@
 ---
-title: "Notatki o Jądrze Linux"
-description: "Linux Kernel Notes"
+title: "Linux Kernel Notes"
+description: "Notatki o Jądrze Linux"
 date: 2023-07-14
 tags: ["pl", "kernel", "linux"]
 categories: ["Notes"]

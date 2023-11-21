@@ -29,10 +29,15 @@ date = [':filename', ':default']
 main_page_image = "img/Beach-Renato-Giordanelli.jpg"
 generic_image = "img/home-bg-jeep.jpg"
 SEOTitle = "sacawa.net"
-description = "Linux etc."
-keyword = "Paweł Sacawa, Paul Sacawa, Linux, Systems Programming"
+description = "Strona Domowa Pawła Sacawy"
+keyword = "Paweł Sacawa, Paul Sacawa"
 # slogan = "Just some hacker"
 author = "Paweł Sacawa"
+# og:image
+# thumbnail = "./static/img/..."
+
+# okrojony nav z lupy
+search_enabled = false
 
 image_404 = "img/404-bg.jpg"
 title_404 = "404 - Nie odnaleziono strony!"
@@ -42,7 +47,7 @@ omit_categories = false
 sidebar_about_description = "Web backend, systems programming on POSIX platform, math. Just another hacker."
 sidebar_avatar = "img/psacawa.jpg"
 
-featured_tags = true  # ?
+featured_tags = true # ?
 # featured_condition_size = 1
 
 disqus_site = ""
@@ -83,12 +88,10 @@ href = "https://unsplash.com"
 # href = "/notes/"
 [[params.addtional_menus]]
 title = "ABOUT"
-href = "/about/"
-
+href = "/about"
 
 [deployment]
 [[deployment.targets]]
 name = "s3"
 URL = "s3://886185890074-sacawa.net?region=us-east-1"
 cloudFrontDistributionID = "E1GPT2RZD6COP"
-
