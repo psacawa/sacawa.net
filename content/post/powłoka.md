@@ -1,6 +1,6 @@
 ---
 title_pl: "Skrypty powłoki sh|bash|zsh /inne Notatki"
-title: "Generic posix shell Notes"
+title: "Generic POSIX shell Notes"
 description: "Ogólne notatki o powłoce oraz przykłądy"
 date: 2023-08-18
 tags: ["pl", "shell", "linux"]
