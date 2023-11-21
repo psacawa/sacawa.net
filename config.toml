@@ -89,6 +89,9 @@ href = "https://unsplash.com"
 [[params.addtional_menus]]
 title = "ABOUT"
 href = "/about"
+[[params.addtional_menus]]
+title = "SITES"
+href = "/sites"
 
 [deployment]
 [[deployment.targets]]
