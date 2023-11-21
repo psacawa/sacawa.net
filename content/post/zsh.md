@@ -8,7 +8,7 @@ categories: ["Notes"]
 ---
 ## Tablice i Tablice Asocjacyjne
 
-Zwykła tablica:
+### Zwykłe Tablicy
 
 ```zsh
 arr=(a b)
@@ -18,7 +18,51 @@ print -l "${(@)arr}" # a\nb
 print -l "${arr[@]}" # a\nb
 ```
 
-Tablice asocjacyjne:
+Operacje binarne na listach:
+
+```zsh
+# cześć współna dwóch list
+${arr2:*arr1}
+# różnica  dwóch list
+${arr2:|arr1}
+# zastrzeżenia: https://unix.stackexchange.com/questions/104837/intersection-of-two-arrays-in-bash
+```
+
+Filtrowanie tablic:
+
+```zsh
+Odfiltruj wzór glob od tablicy
+path=(${path:#*pyenv*})
+# filtruj wzór glob od tablicy
+local_path=(${(M)path:#/usr/local*})
+```
+
+Rozdzielić wyjście polecenia do tablicy przez LF, repesktując odstępy:
+
+```
+IFS=$'\n' files=($(fd -d1))
+# lub
+files=("${(f)$(fd -tf)}")
+```
+
+
+Rozdziel uwzględniając gramatyka powłoki (tj. usuwając zbędne odstępy)
+
+```
+pids=("${(zf)$(ps -A o sid=)}")
+```
+
+Stosując ekspansję na tablic szeregowo, nie wmieszamy konwersję do łańcucha. Zatem
+
+```zsh
+echo ${(F)${cmds%*-15}#llvm-*} | wyst
+# zamiast
+echo ${${(F)cmds%*-15}#llvm-*} | wyst
+```
+
+
+
+### Tablice asocjacyjne
 
 ```zsh
 typeset -A assoc assoc2
@@ -49,7 +93,7 @@ assoc=("${(@)arr1:^arr2}")
 foo () { if (($@[(Ie)-B])); then echo found; else; echo not found; fi }
 ```
 
-## Wskazówki
+## Globowanie
 
 Filtrować listę przez wzorzec glob:
 
@@ -58,70 +102,41 @@ ls -d ${(R)fpath:#/usr/share*}
 ```
 
 Globowanie plików wykonywalnych na `$path`
+
 ```
 echo {^~path}/*(*)
 ```
 
 Pochodzenie wszystkich plików wykonywalnych pasujących do globu:
+
 ```zsh
 dpkg -S ${^~path}/*virt*(*N:A)| sort
 ```
-# filtrowanie globa za pomocą dowolnego warunku
+
+Filtrowanie globa za pomocą dowolnego warunku:
+
+```zsh
 ls /usr/bin/*(e:'file $REPLY | grep python >/dev/null':)
+```
 
-#uzupełnienie pliki pasujące do globa
-_foo () { _arguments '-p[port]:port:_path_files -g /dev/\*\(%c\)' }
 
-#rozdzielić wyjście polecenia do tablicy przez LF, repesktując odstępy
-IFS=$'\n' files=($(fd -d1))
-# lub
-files=("${(f)$(fd -tf)}")
+glob na tablicę:
 
-# ODfiltruj wzór glob od tablicy
-path=(${path:#*pyenv*})
-# filtruj wzór glob od tablicy
-local_path=(${(M)path:#/usr/local*})
-
-# cześć współna dwóch list
-${arr2:*arr1}
-# różnica  dwóch list
-${arr2:|arr1}
-# zastrzeżenia: https://unix.stackexchange.com/questions/104837/intersection-of-two-arrays-in-bash
-
-# glob nieuwzględniający wielkość liter
-# niektóre kwalifikatory muszą wyprzedzać część wzorca
-wl **/(#i)*txt
-
-# rozdziel uwzględniając gramatyka powłoki (tj. usuwając zbędne odstępy)
-pids=("${(zf)$(ps -A o sid=)}")
-
-# przekierować jedynie stderr przez potokę
-LD_DEBUG=all =ls 2>&1 >&- >/dev/null | less
-# w odróznieniu od basha, następujące nie działą
-LD_DEBUG=all =ls 2>&1 >/dev/null | less
-
-# liczby szesnastkowe - printf nalezy do libc
-echo $'\x41'
-printf "%d" 0x41
-
-# glob -> tablica
+```
 arr=(${:-/sys/module/*})
+```
 
-# kwalifikatory globów tylko na koniec globu
-# ekskluzja z kwalifikacją
+Glob nieuwzględniający wielkość liter. Niektóre kwalifikatory muszą wyprzedzać część wzorca
+
+```
+wl **/(#i)*txt
+```
+
+Kwalifikatory globów tylko na koniec globu. Przykład ekskluzji z kwalifikacją:
+
+```
 ls /usr/share/systemtap/tapset/**/*~*.stp(.)
-
-# stosując ekspansję na tablic szeregowo, nie wmieszamy konwersję do łańcucha. Zatem
-echo ${(F)${cmds%*-15}#llvm-*} | wyst
-# zamiast
-echo ${${(F)cmds%*-15}#llvm-*} | wyst
-
-# zarządzanie deskryptorami plików
-exec {myfd} < ./file
-while read -u ${myfd} line; do # też read line <&${myfd};
-    echo ${LINE}
-done
-exec {myfd}<&-
+```
 
 
 ## Uzypełnienia
@@ -138,6 +153,14 @@ _arguments \
 
 poprawnie uzupełnia `foo -f ^I` oraz `foo ^I`.
 
+
+Szupełnienie pliki pasujące do globa:
+
+```
+_foo () { _arguments '-p[port]:port:_path_files -g /dev/\*\(%c\)' }
+```
+
+
 ### Inne
 
 Znaajdź opcję w liście argumentów `$words` i upewnij się że ma powiązany argument
@@ -149,3 +172,29 @@ if ((idx > 0 && idx + 1 <= $#words )); then
   ...
 fi
 ```
+
+Zarządzanie deskryptorami plików:
+
+```zsh
+exec {myfd} < ./file
+while read -u ${myfd} line; do # też read line <&${myfd};
+    echo ${LINE}
+done
+exec {myfd}<&-
+```
+
+Przekierować jedynie stderr przez potokę:
+
+```
+LD_DEBUG=all =ls 2>&1 >&- >/dev/null | less
+# w odróznieniu od basha, następujące nie działą
+LD_DEBUG=all =ls 2>&1 >/dev/null | less
+```
+
+Liczby szesnastkowe - printf nalezy do libc:
+
+```
+echo $'\x41'
+printf "%d" 0x41
+```
+
