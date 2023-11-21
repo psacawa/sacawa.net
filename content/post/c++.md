@@ -2,7 +2,7 @@
 title_pl: "C++ Notatki"
 title: "C++ Notes"
 description: "Zgromadzone notatki o C++"
-date: 2023-11-20
+date: 2023-07-05
 tags: ["pl", "c++"]
 categories: ["Notes"]
 ---

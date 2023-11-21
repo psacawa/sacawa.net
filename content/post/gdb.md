@@ -2,7 +2,7 @@
 title_pl: "gdb Notatki"
 title: "gdb Notes"
 description: "Zgromadzone notatki o gdb"
-date: 2023-11-20
+date: 2023-11-05
 tags: ["pl", "gdb", "c++", "c", "gcc"]
 categories: ["Notes"]
 ---

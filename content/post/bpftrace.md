@@ -1,7 +1,8 @@
 ---
-title: "bpftrace Notatki"
+title_pl: "bpftrace Notatki"
+title: "bpftrace Notes"
 description: "Zgromadzone notatki o bptrace"
-date: 2023-11-20
+date: 2023-08-17
 tags: ["pl", "bpftrace", "kernel", "linux"]
 categories: ["Notes"]
 ---

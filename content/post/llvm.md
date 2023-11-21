@@ -2,7 +2,7 @@
 title_pl: "LLVM/Clang Notatki"
 title: "LLVM/Clang Notes"
 description: "Zgromadzone notatki o środowisku LLVM oraz Clang"
-date: 2023-11-20
+date: 2023-07-04
 tags: ["pl", "llvm", "clang", "c++", "c"]
 categories: ["Notes"]
 ---

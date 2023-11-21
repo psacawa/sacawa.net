@@ -2,7 +2,7 @@
 title_pl: "USB Notatki"
 title: "USB Notes"
 description: "Zgromadzone notatki o USB"
-date: 2023-11-20
+date: 2023-07-14
 tags: ["pl", "usb", "kernel"]
 categories: ["Notes"]
 ---

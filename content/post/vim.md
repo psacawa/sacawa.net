@@ -2,7 +2,7 @@
 title_pl: "Vim Notatki"
 title: "Vim Notes"
 description: "Zgromadzone notatki o (neo)?vim"
-date: 2023-11-20
+date: 2023-08-20
 tags: ["pl", "vim"]
 categories: ["Notes"]
 ---

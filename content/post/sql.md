@@ -2,7 +2,7 @@
 title_pl: "SQL Notatki"
 title: "SQL Notes"
 description: "Zgromadzone notatki o SQL"
-date: 2023-11-20
+date: 2023-08-08
 tags: ["pl", "sql", "postgres", "sqlite"]
 categories: ["Notes"]
 ---

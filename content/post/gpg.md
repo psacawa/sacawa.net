@@ -2,7 +2,7 @@
 title_pl: "gpg Notatki"
 title: "gpg Notes"
 description: "Zgromadzone notatki o gpg"
-date: 2023-11-20
+date: 2023-11-09
 tags: ["pl", "gpg", "cryptography"]
 categories: ["Notes"]
 ---

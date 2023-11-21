@@ -2,7 +2,7 @@
 title_pl: "ELF Notatki"
 title: "ELF Notes"
 description: "Zgromadzone notatki o formacie binarnym ELF"
-date: 2023-11-20
+date: 2023-06-27
 tags: ["pl", "elf", "reversing", "linux"]
 categories: ["Notes"]
 ---

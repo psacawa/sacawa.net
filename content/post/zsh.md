@@ -2,7 +2,7 @@
 title_pl: "ZSH Notatki"
 title: "ZSH Notes"
 description: "Zgromadzone notatki o ZSH"
-date: 2023-11-20
+date: 2023-07-26
 tags: ["pl", "shell", "zsh", "linux"]
 categories: ["Notes"]
 ---

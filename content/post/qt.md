@@ -457,7 +457,7 @@ Pozwaląją też zmierzyć objetość treści `sizeFromContents(QStyle::Contents
 
 - Jeśli dajesz `#include "moc_some_qobj.cpp"` na koniec Implementacji, upewnij się że w nagłówku `some_qobj.h` zostało użyte `#pragma once` lub wzór `#ifndef/#define`.
 
-## Odniesienia
+## Przypisy
 
 - [0] https://wiki.qt.io/D-Pointer
 - [1] https://stackoverflow.com/questions/25250171/how-to-use-the-qts-pimpl-idiom
@@ -466,5 +466,5 @@ Pozwaląją też zmierzyć objetość treści `sizeFromContents(QStyle::Contents
 - [4] https://stackoverflow.com/questions/67080870/when-do-i-have-to-include-moc-cpp-in-qt
 - [5] https://stackoverflow.com/questions/19719397/qt-slots-and-c11-lambda
 - [6] https://doc.qt.io/qt-6/signalsandslots.html#slots
-- [7 ]https://stackoverflow.com/questions/37639066/how-can-i-use-qt5-connect-on-a-slot-with-default-parameters
+- [7] https://stackoverflow.com/questions/37639066/how-can-i-use-qt5-connect-on-a-slot-with-default-parameters
 - [8] https://cmake.org/cmake/help/latest/prop_tgt/AUTOMOC.html

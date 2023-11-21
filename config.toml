@@ -4,6 +4,10 @@ languageCode = 'en'
 defaultContentLanguage = "en"
 paginate = 20
 
+# "updated on" będzie generowane na podstawie ostatniego zapisu w git
+# https://makewithhugo.com/add-a-last-edited-date/
+enableGitInfo = true
+
 [languages.en]
 title = "sacawa.net - Home Page of Paweł Sacawa"
 weight = 1
@@ -32,7 +36,7 @@ author = "Paweł Sacawa"
 
 image_404 = "img/404-bg.jpg"
 title_404 = "404 - Nie odnaleziono strony!"
-omit_categories = true
+omit_categories = false
 
 # Sidebar settings
 sidebar_about_description = "Web backend, systems programming on POSIX platform, math. Just another hacker."
