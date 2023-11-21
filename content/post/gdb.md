@@ -9,6 +9,25 @@ categories: ["Notes"]
 
 # Gdbserver
 
+Podstawowe użycie dla aplikacji z we/wy na terminal:
+
+```
+# tty1
+gdbserver :1337 ./mojebin
+# tty2
+gdb ./mojebin
+> target extended-remote :1337
+> continue
+```
+
+Aby móc ponownie uruchomić proces serwera z klienta
+
+```
+> target extended-remote :1337
+# zamias
+> target remote :1337
+```
+
 # Wskazówki
 
 ## Nagrywanie i Wykonanie Nagrania Wstecz z rr
