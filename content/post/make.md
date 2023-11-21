@@ -1,5 +1,6 @@
 ---
-title: "gnu make Notatki"
+title_pl: "gnu make Notatki"
+title: "gnu make Notes"
 description: "Zgromadzone notatki o Gnumake"
 date: 2023-11-20
 tags: ["pl", "make", "gnu", "c"]

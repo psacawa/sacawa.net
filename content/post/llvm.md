@@ -1,5 +1,6 @@
 ---
-title: "LLVM/Clang Notatki"
+title_pl: "LLVM/Clang Notatki"
+title: "LLVM/Clang Notes"
 description: "Zgromadzone notatki o środowisku LLVM oraz Clang"
 date: 2023-11-20
 tags: ["pl", "llvm", "clang", "c++", "c"]
@@ -12,7 +13,7 @@ categories: ["Notes"]
 
 Wtyczki clang kompilujemy poza dystrybucją LLVM CMake'em, z następującymi instrukcjami:
 
-```
+```cmake
 find_package(LLVM REQUIRED CONFIG)
 
 include_directories(${LLVM_INCLUDE_DIRS})

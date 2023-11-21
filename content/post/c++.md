@@ -1,5 +1,6 @@
 ---
-title: "C++ Notatki"
+title_pl: "C++ Notatki"
+title: "C++ Notes"
 description: "Zgromadzone notatki o C++"
 date: 2023-11-20
 tags: ["pl", "c++"]
@@ -29,7 +30,7 @@ Błąd konsolidatora. Kompilator nie narzeka. Standard wymaga definicji wszystki
 
 ### Konstructor kopiujący a przypisanie z przenoszeniem
 
-```
+```c++
 C c1;
 C c2 = c1 # konstruktor kopiujący
 C c3;
@@ -98,7 +99,11 @@ int main () {
 }
 ```
 
-# ABI
+# ABI Itanium
+
+## Generowany Kod
+
+Wszytkie jest jakoby rozszerzien interfejsu wywołania SysV amd64, czyli np. mamy parametry w rejestrach `rdi`, `rsi`, `rdx`, `rcx`, `r8`, `r9`, potem na stosie. Wartość zwrotna w `rax`. Metody mają ukryty pierwszy parametr, którym jest wskaźnik `this` w `rdi`. Konstructory i destruktory nie mają wartości zwrotnej (`void`). Pierwszy (ukryty) parametr konstruktora to adres gdzie ma być skonstruowane obiekt.
 
 ## Konstructory Globalnych Instancji Klas
 
@@ -159,7 +164,7 @@ Wniosek: w konstruktorach typu `__attribute__((constructor))`, globalne zmienne 
 
 Wskaźnik do funkcji z `decltype`:
 
-```
+```c++
 int square(int x) { return x * x; }
 ...
 decltype(square) *square_ptr = square;
@@ -182,8 +187,3 @@ std::copy_if(in.begin(), in.end(), std::back_inserter(out), [](int x) { return x
 
 <!-- TODO 14/08/20 psacawa: finish this -->
 
-# ABI Itanium
-
-## Generowany Kod
-
-Wszytkie jest jakoby rozszerzien interfejsu wywołania SysV amd64, czyli np. mamy parametry w rejestrach `rdi`, `rsi`, `rdx`, `rcx`, `r8`, `r9`, potem na stosie. Wartość zwrotna w `rax`. Metody mają ukryty pierwszy parametr, którym jest wskaźnik `this` w `rdi`. Konstructory i destruktory nie mają wartości zwrotnej (`void`). Pierwszy (ukryty) parametr konstruktora to adres gdzie ma być skonstruowane obiekt.

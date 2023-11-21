@@ -1,5 +1,6 @@
 ---
-title: "Git Notatki"
+title_pl: "Git Notatki"
+title: "Git Notes"
 description: "Zgromadzone notatki o Git"
 date: 2023-11-20
 tags: ["pl", "git"]

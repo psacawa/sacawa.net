@@ -1,5 +1,6 @@
 ---
-title: "gdb Notatki"
+title_pl: "gdb Notatki"
+title: "gdb Notes"
 description: "Zgromadzone notatki o gdb"
 date: 2023-11-20
 tags: ["pl", "gdb", "c++", "c", "gcc"]

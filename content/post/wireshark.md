@@ -1,5 +1,6 @@
 ---
-title: "wireshark Notatki"
+title_pl: "wireshark Notatki"
+title: "wireshark Notes"
 description: "Zgromadzone notatki o wireshark"
 date: 2023-11-20
 tags: ["pl", "networking", "sysadmin", "wireshark"]

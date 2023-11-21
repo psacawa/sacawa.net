@@ -1,5 +1,6 @@
 ---
-title: "Konsolidator dynamiczny glibc ld.so Notatki"
+title_pl: "Konsolidator dynamiczny glibc ld.so Notatki"
+title: "glibc Runtime Linker ld.so Notes"
 description: "Zgromadzone notatki o konsolidatorze dynamicznym w środowisku GNU"
 date: 2023-11-20
 tags: ["pl", "linux", "gnu", "ld.so", "glibc"]

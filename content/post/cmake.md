@@ -1,5 +1,6 @@
 ---
-title: "CMake Notatki"
+title_pl_: "CMake Notatki"
+title: "CMake Notes"
 description: "Zgromadzone notatki o CMake"
 date: 2023-11-20
 tags: ["pl", "cmake", "c++"]

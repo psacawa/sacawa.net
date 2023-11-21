@@ -1,5 +1,6 @@
 ---
-title: "SQL Notatki"
+title_pl: "SQL Notatki"
+title: "SQL Notes"
 description: "Zgromadzone notatki o SQL"
 date: 2023-11-20
 tags: ["pl", "sql", "postgres", "sqlite"]
@@ -30,6 +31,6 @@ create table kawiarnie (id integer  not null, nazwa text  not null,  opis text  
 
 ### Stwórz kopię tablicy
 
-```
+```sql
 CREATE TABLE onan_copy as select * from onan;
 ```

@@ -1,5 +1,6 @@
 ---
-title: "uftrace Notatki"
+title_pl: "uftrace Notatki"
+title: "uftrace Notes"
 description: "Przykłądowe Użycia uftrace"
 date: 2023-11-20
 tags: ["pl", "uftrace", "linux"]

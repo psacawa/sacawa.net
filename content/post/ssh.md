@@ -1,5 +1,6 @@
 ---
-title: "ssh Notatki"
+title_pl: "ssh Notatki"
+title: "ssh Notes"
 description: "Zgromadzone notatki o ssh"
 date: 2023-11-20
 tags: ["pl", "ssh", "linux", "shell"]

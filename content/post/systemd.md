@@ -1,5 +1,6 @@
 ---
-title: "systemd Notatki"
+title_pl: "systemd Notatki"
+title: "systemd Notes"
 description: "Zgromadzone notatki o systemd"
 date: 2023-11-20
 tags: ["pl", "systemd", "linux", "sysadmin"]

@@ -1,5 +1,6 @@
 ---
-title: "Qt Notatki"
+title_pl: "Qt Notatki"
+title: "Qt Notes"
 description: "Zgromadzone notatki o Qt"
 date: 2023-11-20
 tags: ["pl", "qt", "c++", "gui"]

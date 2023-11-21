@@ -1,5 +1,6 @@
 ---
-title: "C Notatki"
+title_pl: "C Notatki"
+title: "C Notes"
 description: "Zgromadzone notatki o C"
 date: 2023-11-20
 tags: ["pl", "c"]
@@ -20,7 +21,7 @@ Argument `-include plik` jest jednoznaczne z dopisaniem na początek plik źród
 
 Mamy makra funkcyjne oraz obiektowe, a obiektowe są rozwinięte w pierwszej kolejności. Aby "złańcuchować" wartość makra, `#define STR(x) #x` nie wystarczy. Użyj następną konstrukcje.
 
-```
+```c
 #define STR_HELPER(x) #x
 #define STR(x) STR_HELPER(x)
 ```
@@ -55,7 +56,7 @@ printf("%d\n", dst);
 
 Skłądnia Intel:
 
-```
+```c
 int src = 1;
 int dst;
 

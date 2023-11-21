@@ -1,5 +1,6 @@
 ---
-title: "gcov Notatki"
+title_pl: "gcov Notatki"
+title: "gcov Notes"
 description: "Zgromadzone notatki o gcov"
 date: 2023-11-20
 tags: ["pl", "gcov", "gcc", "c++", "c"]

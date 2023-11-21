@@ -1,5 +1,6 @@
 ---
-title: "ELF Notatki"
+title_pl: "ELF Notatki"
+title: "ELF Notes"
 description: "Zgromadzone notatki o formacie binarnym ELF"
 date: 2023-11-20
 tags: ["pl", "elf", "reversing", "linux"]
@@ -20,7 +21,7 @@ categories: ["Notes"]
 
 Tablica wiązania procedur. Wraz z wariantami, zawiera fragmenty kodu jak
 
-```
+```asm
 bnd jmp QWORD PTR [rip+0x2f75]        # 3fd0 <puts@GLIBC_2.2.5>
 ```
 

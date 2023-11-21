@@ -1,5 +1,6 @@
 ---
-title: "nasm Notatki"
+title_pl: "nasm Notatki"
+title: "nasm Notes"
 description: "Zgromadzone notatki o assemblerze nasm"
 date: 2023-11-20
 tags: ["pl", "nasm", "assembly", "x86"]
