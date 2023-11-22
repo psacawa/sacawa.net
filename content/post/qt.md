@@ -7,7 +7,7 @@ tags: ["pl", "qt", "c++", "gui"]
 categories: ["Notes"]
 ---
 
-## Widźety
+## Widżety
 
 ### Układ (ang. Layout)
 
@@ -205,7 +205,7 @@ _Uwaga_: `moc` zdaje się przetwarzać pliki źrodłowe oraz nagłówkowe pod wa
 
 Patrz [3,4].
 
-## Zdarzenie
+## Zdarzenia (QEvent)
 
 Przesyłane do odbiorników poprzew wywowłanie `virtual void event(QEvent *e)`. Podklasy `QWidget` zwykle wybierają te podklasy `QEvent` (przez `event->type()`) które chcą zjeść (jak kliknięcnie w nieaktywny przycisk), niekoniecznie je obsługując. W przeciwnym razie, oddelegują zdarzenie do klasy rodzica. Dopiero `QWidget::event` wywołuje poszczególne procedury obsługi `mouseMoveEvent`, `mouseButtonPress`.
 
@@ -260,7 +260,7 @@ QKeyEvent(KeyRelease, Key_F, text="f") MyPushButton(0x561d366611f0)
 
 ### Przykłady śladów stosu dostarczeń zdarzeń
 
-Wciśnięcie klawiszy dostarca zdarzenie do widźetu ze skupieniem (`QPushButton`).
+Wciśnięcie klawiszy dostarca zdarzenie do widżetu ze skupieniem (`QPushButton`).
 
 ```
 - [0] QPushButton::keyPressEvent(QKeyEvent*)+0 at widgets/widgets/qpushbutton.cpp:420
@@ -439,7 +439,7 @@ Włacz `enable_testing()` w nadrzędnym `CMakeLists.txt`, inaczej `ctest` narzek
 
 ## Qt Creator
 
-Qt Creator tworzy układy (`QLayout`) przywiązane do widżetów. Nie stworzy żadne wywołania `addLayout`, tylko doda koljeny widżet, a na nim stworzy układ (`setLayout`). Aby stworzyć układu na `QMainWindow`, musisz najpierw stworzyć jakieś dziecko centralnego widźetu.
+Qt Creator tworzy układy (`QLayout`) przywiązane do widżetów. Nie stworzy żadne wywołania `addLayout`, tylko doda koljeny widżet, a na nim stworzy układ (`setLayout`). Aby stworzyć układu na `QMainWindow`, musisz najpierw stworzyć jakieś dziecko centralnego widżetu.
 
 ## Renderowanie
 
