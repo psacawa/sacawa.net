@@ -7,9 +7,9 @@ tags: ["pl", "make", "gnu", "c"]
 categories: ["Notes"]
 ---
 
-## Specjalizacja regułu dla poszczególne cele
+## Wskazówki
 
-"Statyczne reguły":
+Statyczne reguły, czyli specjalizacja regułu dla Poszczególne celów:
 
 ```make
 libc_targets = ptr xmm-demo
