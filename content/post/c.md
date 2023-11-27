@@ -68,6 +68,18 @@ asm("mov %0, %1 \n"
 printf("%d\n", dst);
 ```
 
+Przykład z opcją _clobber_ (`"cc"` znaczy że `EFLAGS` jest nadpisane). Bitskan argumentu:
+
+```c
+uint32_t mask = strtoul(argv[1], NULL, 10);
+uint32_t idx;
+asm("bsfl %[aMask], %[aIndex]"
+    : [aIndex] "=r"(idx)
+    : [aMask] "r"(mask)
+    : "cc");
+printf("%d\n", idx);
+```
+
 # Środowisko Wykowawcze (ang. Runtime Environment)
 
 Sterta jest generowana w sposób leniwy w GNU. `sbrk(0)` wskazuje na jej koniec(górę).
