@@ -85,7 +85,7 @@ printf("%d\n", idx);
 Bariera Kompilacji (ang. ^compiler barrier^ ) - Uniemożliwia zmiany kolejności instrukcji:
 
 ```c
-asm volatile("" ::: "memory");
+#define COMPILER_BARRIER() asm volatile("" ::: "memory")
 ```
 
 
