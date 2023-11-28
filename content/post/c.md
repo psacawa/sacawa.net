@@ -83,3 +83,50 @@ printf("%d\n", idx);
 # Środowisko Wykowawcze (ang. Runtime Environment)
 
 Sterta jest generowana w sposób leniwy w GNU. `sbrk(0)` wskazuje na jej koniec(górę).
+
+# libc
+
+## stdio
+
+### v?[sdf]?n?printf
+
+
+Format `%[m$][flagi][szerokość][precyzja][długość][kowersja]`.
+
+Opcjonalne `m$`pozwala określić z którego parametru będzie brany argument.
+
+#### Flagi
+
+- `#` alternatywny format
+- `0` wypełnić zerami z lewej strony
+
+#### Szerokość Pola
+
+Liczba wiekszą niz zero określająca minimalna szerokość pola, albo `*` (szerokość określona przez nasępny parametr) lub `*m$` (przez `m`-ty parametr)
+
+#### Precyzja
+
+Format: `.m` określa dokładność do `m` miejsc za przecinkiem.  `*` i `*m$` tez akceptowane
+
+#### Modyfikator Długości
+
+- `l`: `long`
+- `z`: `size_t`/`ssize_t`
+- `h`: `short`
+- `hh`: `char`/`signed char`
+
+#### Konwersja
+
+- `d`: dziesiątkowy
+- `u`: dziesiątkowy bez znaku
+- `x`: szesnastkowy
+- `p`: wskaźnik
+- `f`: zmiennoprzecinkowe
+- `s`: łańcuch
+
+#### Przykłady
+
+```c
+for (int i = 0; i != argc; ++i)
+  printf("%1$s at %1$p\n", argv[i]);
+```
