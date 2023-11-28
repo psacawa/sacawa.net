@@ -28,6 +28,8 @@ Mamy makra funkcyjne oraz obiektowe, a obiektowe są rozwinięte w pierwszej kol
 
 E.g. `const char file[] = STR_HELPER(__FILE__);` będzie `__FILE__`, ale `const char file[] = STR(__FILE__);` będzie nazwą pliku (otoczone cudzysłowiami, co jest nieuniknione).
 
+# Język C
+
 ## Włączony (ang. inlined) Język Asemblera
 
 Ogólny schemat to `asm(kod : wyjscie : wejście )`. W[ey]jście ma postać `ograniczenie (zmienna)`, e.g. `=r(dest)`.
@@ -80,6 +82,13 @@ asm("bsfl %[aMask], %[aIndex]"
 printf("%d\n", idx);
 ```
 
+Bariera Kompilacji (ang. ^compiler barrier^ ) - Uniemożliwia zmiany kolejności instrukcji:
+
+```c
+asm volatile("" ::: "memory");
+```
+
+
 # Środowisko Wykowawcze (ang. Runtime Environment)
 
 Sterta jest generowana w sposób leniwy w GNU. `sbrk(0)` wskazuje na jej koniec(górę).
@@ -97,8 +106,8 @@ Opcjonalne `m$`pozwala określić z którego parametru będzie brany argument.
 
 #### Flagi
 
-- `#` alternatywny format
-- `0` wypełnić zerami z lewej strony
+- `#`: alternatywny format
+- `0`: wypełnić zerami z lewej strony
 
 #### Szerokość Pola
 
