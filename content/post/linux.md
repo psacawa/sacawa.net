@@ -35,6 +35,48 @@ echo 0x2001 0x331b | s tee /sys/module/8192eu/drivers/usb:rtl8192eu/new_id
 
 Trzeba podać dla czwartego parametru `MMAP_PRIVATE` lub `MMAP_SHARED`, e.g. `mmap(NULL, 0x4000, perm, MAP_ANON | MAP_PRIVATE, 0, 0)`. Inaczej otrzymujey `EINVAL`.
 
+## set\*uid
+
+Procesowi uprzywilejowanemu wolno dowolne zmiany. Procesowi nieuprzywilejowanemu wolno tylko zmienić `ruid`, `euid`, oraz `suid` na obecne wartości którekolwiek z tych trzech. Zatem po suid root
+
+
+```
+> ruid: 1000  euid: 0     suid: 0
+seteuid(1000);
+> ruid: 1000  euid: 1000  suid: 0
+setresuid(0, 0, 0);
+> ruid: 0     euid: 0     suid: 0
+```
+
+działa mimo że `euid!=0`.
+
+Jeśli proces nie jest uprzywilejowany, to `setuid` jest jednoznaczne z `seteuid`. Jeśli jest uprzywilejowany, to ustawia `ruid`, `euid`, oraz `suid`. Po suid root:
+
+
+```
+> ruid: 1000  euid: 0     suid: 0
+seteuid(1000);
+> ruid: 1000  euid: 1000  suid: 0
+setuid(0);
+> ruid: 1000  euid: 0     suid: 0
+```
+
+Dla wywołań `setreuid` oraz `setresuid`, wynik jest pomyślny tylko jeśli *wszystkie* identyfikatory były ustawione. Jeśli tylko niektóre zmiany są dozwolone, żadna nie zajdzie, a wartość zwracania będzie `-1`.
+ 
+# Kwalifikacje (ang. _Credentials_)
+
+Definicja: *Proces uprzywilejowany* to proces z `euid=0`.
+
+Po uruchomienie program suid posiadanie przez `uid=0`:
+
+```
+ruid: 1000  euid: 0     suid: 0
+```
+
+Stamtąd `setuid(0)` daje `ruid=0`. Porzucamy na stałe przywileje poprzez `setuid(1000)` (by porzucić je na stałe, trzeba być uprzywilejowanym).
+
+`fsuid` jest ustawiany gdykolwiek `euid` jest zmienione. `setfsuid` ustawia go bez zmiany `euid`. Jest rozszerzeniem Linuka.
+
 # Przypisy
 
 [0] https://github.com/nick0ve/how-to-bypass-aslr-on-linux-x86_64
