@@ -12,7 +12,7 @@ categories: ["Notes"]
 Przykład:
 
 ```sh
-TEMP=$(getopt -o 'r:o:' --long 'required-parameter:required-parameter::' -n 'ProcessLoadedLib.sh' -- "$@")
+TEMP=$(getopt -o 'r:o:' --long 'required-parameter:optional-parameter::' -n 'ProcessLoadedLib.sh' -- "$@")
 
 if [ $? -ne 0 ]; then
 	echo 'Terminating...' >&2
