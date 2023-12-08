@@ -77,6 +77,25 @@ Stamtąd `setuid(0)` daje `ruid=0`. Porzucamy na stałe przywileje poprzez `setu
 
 `fsuid` jest ustawiany gdykolwiek `euid` jest zmienione. `setfsuid` ustawia go bez zmiany `euid`. Jest rozszerzeniem Linuka.
 
+# Przestrzenie Nazw (ang. *namespaces* )
+
+## Ogólne
+
+Z powłoki: `unshare`, `nsenter`, `lsns`. Interfejs systemu: `unshare`, `setns`, `clone`.
+
+## Przestrzenie nazw Użytkkowników (PNU, ang. *user namespace*)
+
+Domyślnie po wywołaniu systemowego `unshare` w nowej przestrzeni nazw użytkkowników, mamy `ruid=euid=suid=65534 (nobody)`. Aby zostać superużytkownikime w podrzedznej PNU, można wywołać `unshare -Ur sh`, co wywołuje `newuidmap`.
+
+Odwzorowania id użytkkowników z jednej PNU na drugi jest zawarte w `/proc/<pid>/uid_map`. Format składa się z wierszy mający postać
+
+```
+<początek zakresu w PNU> <początek zakresu poza PNU> <długość zakresu>
+```
+Zatem  `0 1000 1` znaczy `root` w PNU jest naprawdę `uid=1000`, a poza tym, bez zmian w identyfikatorach użytkkowników. Natomiasst `0 0 4294967295` znaczy odwzorowania tożsamościowe z uid w PNU na PNU drugiego.
+
+n.b. jest to odwzorowania z PNU tego procesu do PNU procesu czytającego. Zatem wynikia różnią się w zależności od procesu wywołującego `open("/proc/<pid>/uid_map", ...)`, który to plik jest globalnie czytelny. Nawet niekoniecznie którakolwiek z PNU musi być nadrzędny nad drugim!
+
 # Przypisy
 
 [0] https://github.com/nick0ve/how-to-bypass-aslr-on-linux-x86_64
