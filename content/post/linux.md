@@ -92,7 +92,7 @@ Odwzorowania id użytkkowników z jednej PNU na drugi jest zawarte w `/proc/<pid
 ```
 <początek zakresu w PNU> <początek zakresu poza PNU> <długość zakresu>
 ```
-Zatem  `0 1000 1` znaczy `root` w PNU jest naprawdę `uid=1000`, a poza tym, bez zmian w identyfikatorach użytkkowników. Natomiasst `0 0 4294967295` znaczy odwzorowania tożsamościowe z uid w PNU na PNU drugiego.
+Zatem  `0 1000 1` znaczy `root` w PNU jest naprawdę `uid=1000`, a poza tym, bez zmian w identyfikatorach użytkkowników. Natomiast `0 0 4294967295` znaczy odwzorowania tożsamościowe z uid w PNU na PNU drugiego. Ten plik jest początkowo pusty, i można zapisać **raz** by stworzyć odwzorowanie.
 
 n.b. jest to odwzorowania z PNU tego procesu do PNU procesu czytającego. Zatem wynikia różnią się w zależności od procesu wywołującego `open("/proc/<pid>/uid_map", ...)`, który to plik jest globalnie czytelny. Nawet niekoniecznie którakolwiek z PNU musi być nadrzędny nad drugim!
 
