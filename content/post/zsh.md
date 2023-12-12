@@ -113,6 +113,12 @@ Pochodzenie wszystkich plików wykonywalnych pasujących do globu:
 dpkg -S ${^~path}/*virt*(*N:A)| sort
 ```
 
+Wiązania symboliczne (ang. `symlink`) które wsazują na katalogi:
+
+```zsh
+ll -d /usr/include/**/*(@-/)
+```
+
 Filtrowanie globa za pomocą dowolnego warunku:
 
 ```zsh
