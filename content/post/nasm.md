@@ -65,3 +65,17 @@ some_func:
   leave
   %pop
 ```
+
+## Wskaźniki
+
+Zamiast e.g.
+
+```asm
+add rax,QWORD PTR fs:0x0
+```
+
+w składni nasm mamy
+
+```nasm
+add rax,QWORD [fs:0x0]
+```
