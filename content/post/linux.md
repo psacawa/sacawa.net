@@ -10,7 +10,7 @@ categories: ["Notes"]
 
 VMA procesów przestrzeni użytkownika [0]:
 
-- sama binaria `0x00005500_00000000-0x00005700_00000000` (2 TB)
+- sama binaria `0x00005500_00000000-0x00005700_00000000` (rzekomo 2 TB, ale empirycznie dowodzone że zakres wynosi 1 TB)
 - mmapy `0x00007f00_00000000 - 0x00007fff_ffffffff`, łącznie z bibliotekami (ograniczone to góry stosu - `RLIMIT_STACK`) (1 TB)
 - stos `0x00007ffc_00000000 - 0x00007fff_ffffffff`
 - `0xffffffffff600000 - 0xffffffffff601000` vdso/vsyscall (pamięć jądra)
