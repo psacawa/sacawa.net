@@ -6,6 +6,7 @@ date: 2023-07-26
 tags: ["pl", "shell", "zsh", "linux"]
 categories: ["Notes"]
 ---
+
 ## Tablice i Tablice Asocjacyjne
 
 ### Zwykłe Tablicy
@@ -45,7 +46,6 @@ IFS=$'\n' files=($(fd -d1))
 files=("${(f)$(fd -tf)}")
 ```
 
-
 Rozdziel uwzględniając gramatyka powłoki (tj. usuwając zbędne odstępy)
 
 ```
@@ -59,8 +59,6 @@ echo ${(F)${cmds%*-15}#llvm-*} | wyst
 # zamiast
 echo ${${(F)cmds%*-15}#llvm-*} | wyst
 ```
-
-
 
 ### Tablice asocjacyjne
 
@@ -125,7 +123,6 @@ Filtrowanie globa za pomocą dowolnego warunku:
 ls /usr/bin/*(e:'file $REPLY | grep python >/dev/null':)
 ```
 
-
 glob na tablicę:
 
 ```
@@ -144,7 +141,6 @@ Kwalifikatory globów tylko na koniec globu. Przykład ekskluzji z kwalifikacją
 ls /usr/share/systemtap/tapset/**/*~*.stp(.)
 ```
 
-
 ## Uzypełnienia
 
 ### `_arguments`
@@ -159,13 +155,11 @@ _arguments \
 
 poprawnie uzupełnia `foo -f ^I` oraz `foo ^I`.
 
-
 Szupełnienie pliki pasujące do globa:
 
 ```
 _foo () { _arguments '-p[port]:port:_path_files -g /dev/\*\(%c\)' }
 ```
-
 
 ### Inne
 
@@ -204,3 +198,24 @@ echo $'\x41'
 printf "%d" 0x41
 ```
 
+## Moduły
+
+### Gniazda TCP
+
+Host 1:
+
+```zsh
+zmodload zsh/net/tcp
+ztcp -l 5123
+listenfd=$REPLY
+ztcp -a $listenfd
+fd=$REPLY
+```
+
+Host 2:
+
+```zsh
+zmodload zsh/net/tcp
+ztcp host1 5123
+fd=$REPLY
+```
