@@ -32,7 +32,7 @@ E.g. `const char file[] = STR_HELPER(__FILE__);` będzie `__FILE__`, ale `const 
 
 ## Włączony (ang. inlined) Język Asemblera
 
-Ogólny schemat to `asm(kod : wyjscie : wejście )`. W[ey]jście ma postać `ograniczenie (zmienna)`, e.g. `=r(dest)`.
+Ogólny schemat to `asm(kod : wyjście : wejście )`. W[ey]jście ma postać `ograniczenie (zmienna)`, e.g. `=r(dest)`.
 
 Ograniczenia:
 
@@ -82,12 +82,27 @@ asm("bsfl %[aMask], %[aIndex]"
 printf("%d\n", idx);
 ```
 
+Ograniczenia wyjścia `a` `b` `c` `d` `D` `S` wskazują na wyjście odpowiednio w rejestrzach `rax` `rbx` `rcx` `rdx` `rdi` `rsi`. E.g. `rdtsc` zapisuję wyjście jako `edx:eax`:
+
+```c
+static u64 rdtscp(void)
+{
+    u32 hi, lo;
+    asm volatile (
+        "rdtscp"
+        : "=d"(hi), "=a"(lo)
+        :
+        : "cx", "memory"
+    );
+    return (u64)hi<<32 | lo;
+}
+```
+
 Bariera Kompilacji (ang. ^compiler barrier^ ) - Uniemożliwia zmiany kolejności instrukcji:
 
 ```c
 #define COMPILER_BARRIER() asm volatile("" ::: "memory")
 ```
-
 
 # Środowisko Wykowawcze (ang. Runtime Environment)
 
@@ -98,7 +113,6 @@ Sterta jest generowana w sposób leniwy w GNU. `sbrk(0)` wskazuje na jej koniec(
 ## stdio
 
 ### v?[sdf]?n?printf
-
 
 Format `%[m$][flagi][szerokość][precyzja][długość][kowersja]`.
 
@@ -115,7 +129,7 @@ Liczba wiekszą niz zero określająca minimalna szerokość pola, albo `*` (sze
 
 #### Precyzja
 
-Format: `.m` określa dokładność do `m` miejsc za przecinkiem.  `*` i `*m$` tez akceptowane
+Format: `.m` określa dokładność do `m` miejsc za przecinkiem. `*` i `*m$` tez akceptowane
 
 #### Modyfikator Długości
 
