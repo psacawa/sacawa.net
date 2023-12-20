@@ -178,7 +178,7 @@ Zarządzanie deskryptorami plików:
 ```zsh
 exec {myfd} < ./file
 while read -u ${myfd} line; do # też read line <&${myfd};
-    echo ${LINE}
+  echo ${LINE}
 done
 exec {myfd}<&-
 ```
@@ -206,9 +206,9 @@ Host 1:
 
 ```zsh
 zmodload zsh/net/tcp
-ztcp -l 5123
+ztcp -l 5123 # listen
 listenfd=$REPLY
-ztcp -a $listenfd
+ztcp -a $listenfd # accept
 fd=$REPLY
 ```
 
