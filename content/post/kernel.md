@@ -7,6 +7,10 @@ tags: ["pl", "linux", "c"]
 categories: ["Notes"]
 ---
 
+# Moduły Ładowalne (ang. loadable kernel modules)
+
+Prosty `Makefile`:
+
 ```make
 obj-m += target-lkm1.o
 obj-m += target-lkm2.o
