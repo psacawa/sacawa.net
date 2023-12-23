@@ -10,13 +10,13 @@ categories: ["Notes"]
 
 Usunięcie przedrostka z obiektu:
 
-```jq
+```
 jq '.[]|(.file|= ltrimstr("../"))' compile_commands.json
 ```
 
 Rozdziel `.command` na odstępy, przypisz do `.arguments`:
 
-```jq
+```
 jq 'map  ((.command | split(" ")) as $args | .arguments |= $args | del (.command))' compile_commands.json
 ```
 
@@ -28,12 +28,18 @@ jq '.[]|select(.arguments|any(test("SHARED"))) | .arguments|.[] | (select(test (
 
 Rekurencja + wybieranie poszczególnych wartości:
 
-```
+```jq
 recurse(.nodes[])? | {id, app_id}`
 ```
 
 Interpolacja łańcuchów:
 
-```
+```jq
 rabin2 -j -S build/main | jq '.sections|sort_by(.size)|.[]|select(.name|test("debug")) | "\(.size) \(.name) " '
+```
+
+Usunęcie pewnych flag kompilatora z `compile_commands.json`:
+
+```jq
+[.[]| .arguments |= [.[]|select(test("^-(W|f|m)")|not)]]
 ```
