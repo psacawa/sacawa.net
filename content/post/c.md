@@ -162,4 +162,4 @@ Wydobycie stałych zdefiniowanych jako makra w nagłowkach w celu ich użycia ja
 
 ```sh
 gcc -dM -E - <<< "#include <fcntl.h>" | awk '$2 ~ /\<_*O_.*/' | sed 's/#/%/'
-```sh
+```
