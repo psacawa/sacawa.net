@@ -153,3 +153,13 @@ Format: `.m` określa dokładność do `m` miejsc za przecinkiem. `*` i `*m$` te
 for (int i = 0; i != argc; ++i)
   printf("%1$s at %1$p\n", argv[i]);
 ```
+
+# Kompilatory
+
+## gcc
+
+Wydobycie stałych zdefiniowanych jako makra w nagłowkach w celu ich użycia jako makra `nasm`:
+
+```sh
+gcc -dM -E - <<< "#include <fcntl.h>" | awk '$2 ~ /\<_*O_.*/' | sed 's/#/%/'
+```sh
