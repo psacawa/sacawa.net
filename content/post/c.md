@@ -196,6 +196,8 @@ Paramtry "małe" (klasy `INTEGER` w sensie [0]) w przestrzeni użytkownika : `rd
 
 Dla funkcji wariadycznych, dodatkowo liczba argumentów zmiennoprzecinkowych jest podana w `al` (dolne bajty `rax`). N.b. ogólna liczba argumentów nie jest sygnalizowana w jakikolwiek sposób...
 
+Rejestry zachowane po wywołaniu funkcji: `rbx`, `rbp`, `rsp`, `r12`-`r15`.
+ 
 Wywołania systemowe mają do sześciu parametrów, z których każdy ma klasę `INTEGER`. Używamy rejestry `rdi`, `rsi`, `rdx`, `r10`, `r8`, `r9`. Uruchamiamy instrukcję `syscall`. Jądro nadpisuje `rcx` oraz `r11`. Wartość zwracana w `rax`, a negatywny wynik `x` znaczy błąd systemowe `errno = |x|`.
  
 # Referencje
