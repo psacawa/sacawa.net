@@ -170,7 +170,7 @@ gcc -dM -E - <<< "#include <fcntl.h>" | awk '$2 ~ /\<_*O_.*/' | sed 's/#/%/'
 
 ### ELF
 
-Patrz [notatki ELF]{{< ref "/post/elf/" >}}.
+Patrz [notatki ELF]{{< ref "/post/elf" >}}.
 
 ## AMD64 psABI (SysV ABI)
 
