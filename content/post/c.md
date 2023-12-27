@@ -163,3 +163,41 @@ Wydobycie stałych zdefiniowanych jako makra w nagłowkach w celu ich użycia ja
 ```sh
 gcc -dM -E - <<< "#include <fcntl.h>" | awk '$2 ~ /\<_*O_.*/' | sed 's/#/%/'
 ```
+
+# ABI
+
+## GABI
+
+### ELF
+
+Patrz [notatki ELF]{{< ref "/post/elf/" >}}.
+
+## AMD64 psABI (SysV ABI)
+
+Stos jest wyrównany do 16 bajtów (niektóre instrukcje SIMD jak choćby `movaps` wymagają wyrównanie 16-bajtowe). **Uwaga**: To ma znaczyć wyrównane do 16 bajtów po pchaniu wskaźnika bazowego stosu (`rbp`) na stosie. Czyli po wywołaniu instrukcji `call` lub `jmp`, mamy równość `rsp % 16 == 8`. Stos wygląda tak:
+
+```
+poł.       | wyr.      | wartość
+
+           |           |                          |
+-----------|-----------|--------------------------|
+rbp + 0x8  | % 16 == 8 | wartośc rip zwrotna      |
+-----------|-----------|--------------------------|
+rbp        | % 16 == 0 | stary rbp pchane na stos |
+-----------|-----------|--------------------------|
+           |           | tu zmienne lokalne       |
+```
+
+### Konwencje Wywołania (ang. *calling conventions*)
+
+Opisane w specyfikacji SysV C psABI dla AMD64[0], sekcja 3.2. We wielkim skrócie:
+
+Paramtry "małe" (klasy `INTEGER` w sensie [0]) w przestrzeni użytkownika : `rdi`, `rsi`, `rdx`, `rcx`, `r8`, `r9`, odtąd na stosie. Zmiennie zmiennoprzecinkowe w `xmm0` - `xmm7`. Wartość zwracana w `rax`.
+
+Dla funkcji wariadycznych, dodatkowo liczba argumentów zmiennoprzecinkowych jest podana w `al` (dolne bajty `rax`). N.b. ogólna liczba argumentów nie jest sygnalizowana w jakikolwiek sposób...
+
+Wywołania systemowe mają do sześciu parametrów, z których każdy ma klasę `INTEGER`. Używamy rejestry `rdi`, `rsi`, `rdx`, `r10`, `r8`, `r9`. Uruchamiamy instrukcję `syscall`. Jądro nadpisuje `rcx` oraz `r11`. Wartość zwracana w `rax`, a negatywny wynik `x` znaczy błąd systemowe `errno = |x|`.
+ 
+# Referencje
+
+[0] https://refspecs.linuxbase.org/elf/x86_64-abi-0.99.pdf
