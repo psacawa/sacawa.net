@@ -32,7 +32,24 @@ _start:
 
 ```
 
-## Ucieczki w Stylu C
+## Makra
+
+Wyrównanie (ang. *alignment*) wskaźnika stosu:
+
+```nasm
+; align to resolution (%1)
+%macro ALIGN_STACK 1 
+  ; align
+  mov rdi, %1
+  sub rdi, 1
+  not rdi
+  and rsp, rdi
+%endmacro
+```
+
+## Wskazówki
+
+### Ucieczki w Stylu C
 
 Aby użyć '\n' jako koniec linii, trzeba otoczyć go backtikami, czyli
 
@@ -41,15 +58,15 @@ section .data
   fmt db `hello %s\n\0`
 ```
 
-## Adresowanie względem Licznika programu
+### Adresowanie względem Licznika programu
 
 ```nasm
 mov rax, [rel 0x1000]
 ```
 
-## Stos
+### Stos
 
-### Zmienne Lokalne
+#### Zmienne Lokalne
 
 Najpierw trzeba zdefiniować macro lokalne dla kontekstu `%$localsize` określający rozmiar ramy stosu:
 
@@ -66,7 +83,7 @@ some_func:
   %pop
 ```
 
-## Wskaźniki
+### Wskaźniki
 
 Zamiast e.g.
 
@@ -79,3 +96,4 @@ w składni nasm mamy
 ```nasm
 add rax,QWORD [fs:0x0]
 ```
+
