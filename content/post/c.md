@@ -178,13 +178,12 @@ Stos jest wyrównany do 16 bajtów (niektóre instrukcje SIMD jak choćby `movap
 
 | położenie    | wyrównanie  | zawartość                  |
 | ------------ | ----------- | -------------------------- |
+| ...          | ...         | ...                        |
 | `rbp + 0x10` | `% 16 == 0` | zmienne lokalne            |
-| -----------  | ----------- | -------------------------- |
 | `rbp + 0x8`  | `% 16 == 8` | wartośc `rip` zwrotna      |
-| -----------  | ----------- | -------------------------- |
 | `rbp`        | `% 16 == 0` | stary `rbp` pchane na stos |
-| -----------  | ----------- | -------------------------- |
 | `rbp - 0x8`  | `% 16 == 8` | zmienne lokalne            |
+| ...          | ...         | ...                        |
 
 ### Konwencje Wywołania (ang. _calling conventions_)
 
