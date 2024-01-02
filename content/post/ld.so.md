@@ -91,6 +91,14 @@ Zakresy (ang. scopes) są opisane przez `struct r_scope_elem`. Są to po prostu 
 
 <!-- TODO 02/09/20 psacawa: finish this -->
 
+# libc.so
+
+## malloc
+
+- Próg dla `mmap`: 128KiB.
+- Próg dla tcachebin: 0x1000.
+- Próg dla fastbin: 0x80.
+
 # Przypisy
 
 - [0] dlopen(3)
