@@ -100,8 +100,9 @@ Zakresy (ang. scopes) są opisane przez `struct r_scope_elem`. Są to po prostu 
 Rozmiar jednej areny to `0x21000`. Początek  zawiera metadane (`struct malloc_state`), a pozostałe 2MB jest determinowane przez `glibc.malloc.mmap_max` (domyślnie 2\*\*16),  co określa liczba kawałków które może alokować jedna arena.
 
 - Próg dla `mmap`: 128KiB.
-- Próg dla tcachebin: 1024 + 8. Patrz też `glibc.malloc.tcache_max`.
-- Próg dla fastbin: 0xa0 na `amd64`. Patrz też parametr dostrajalny ld-linux `glibc.malloc.mxfast`.
+- Prog dla large bins: `MIN_LARGE_SIZE` = 0x400 = 1024 + 8.
+- Próg dla tcachebin: też `MIN_LARGE_SIZE`. Patrz też `glibc.malloc.tcache_max`.
+- Próg dla fastbin: `MAX_FAST_SIZE` = 0xa0 = 160 na `amd64`. Patrz też parametr dostrajalny ld-linux `glibc.malloc.mxfast`.  
 
 # Przypisy
 
