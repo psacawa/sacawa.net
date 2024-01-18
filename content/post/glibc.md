@@ -113,7 +113,7 @@ CFLAGS = -g -Wall
 GLIBC_BUILD_DIR  = /home/psacawa/Repozytoria/glibc/build
 
 %: %.o
-	ld -dynamic-linker ${GLIBC_BUILD_DIR}elf/ld-linux-x86-64.so.2 \
+	ld -dynamic-linker ${GLIBC_BUILD_DIR}/elf/ld-linux-x86-64.so.2 \
 		-rpath=${GLIBC_BUILD_DIR} \
 		-L${GLIBC_BUILD_DIR} \
 		${GLIBC_BUILD_DIR}/csu/crti.o \
