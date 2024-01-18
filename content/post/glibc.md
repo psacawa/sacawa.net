@@ -97,12 +97,35 @@ Zakresy (ang. scopes) są opisane przez `struct r_scope_elem`. Są to po prostu 
 
 ## malloc
 
-Rozmiar jednej areny to `0x21000`. Początek  zawiera metadane (`struct malloc_state`), a pozostałe 2MB jest determinowane przez `glibc.malloc.mmap_max` (domyślnie 2\*\*16),  co określa liczba kawałków które może alokować jedna arena.
+Rozmiar jednej areny to `0x21000`. Początek zawiera metadane (`struct malloc_state`), a pozostałe 2MB jest determinowane przez `glibc.malloc.mmap_max` (domyślnie 2\*\*16), co określa liczba kawałków które może alokować jedna arena.
 
 - Próg dla `mmap`: 128KiB.
 - Prog dla large bins: `MIN_LARGE_SIZE` = 0x400 = 1024 + 8.
 - Próg dla tcachebin: też `MIN_LARGE_SIZE`. Patrz też `glibc.malloc.tcache_max`.
-- Próg dla fastbin: `MAX_FAST_SIZE` = 0xa0 = 160 na `amd64`. Patrz też parametr dostrajalny ld-linux `glibc.malloc.mxfast`.  
+- Próg dla fastbin: `MAX_FAST_SIZE` = 0xa0 = 160 na `amd64`. Patrz też parametr dostrajalny ld-linux `glibc.malloc.mxfast`.
+
+# Wskazówki
+
+Kompilacja przy niestandardowym `libc`:
+
+```make
+CFLAGS = -g -Wall
+GLIBC_BUILD_DIR  = /home/psacawa/Repozytoria/glibc/build
+
+%: %.o
+	ld -dynamic-linker ${GLIBC_BUILD_DIR}elf/ld-linux-x86-64.so.2 \
+		-rpath=${GLIBC_BUILD_DIR} \
+		-L${GLIBC_BUILD_DIR} \
+		${GLIBC_BUILD_DIR}/csu/crti.o \
+		${GLIBC_BUILD_DIR}/csu/crt1.o \
+		${GLIBC_BUILD_DIR}/csu/crtn.o \
+		$< -lc -l:elf/ld-linux-x86-64.so.2 -o $@
+
+%.o: %.c
+	${CC} ${CFLAGS} -c $< -o $@
+
+.SUFFIXES:
+```
 
 # Przypisy
 
