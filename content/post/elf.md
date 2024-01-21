@@ -37,6 +37,10 @@ Pierwsze trzy zapisy są specjalne:
 
 Dalej mamy zapisy wobec których mamy relokację R_X86_64_JUMP_SLOT
 
+### .got.plt
+
+Nie mylić z `.plt.got`. Ta część PLT z adresami rozwiązanych symboli funkcji. Wstępnie zawiera adres *drugiej* instrukcji odpowiadającego wpisu w `.plt` (w przypadku braku PIE) lub przesunięcia wskazujące an nie(PIE).
+
 ### .plt.got
 
 Rutyny PLT kiedy używana jest chętny (nieleniwe) wiązanie, jak w przypadku flag Konsolidatora `ld -z now`.
