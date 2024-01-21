@@ -7,7 +7,7 @@ tags: ["pl", "git"]
 categories: ["Notes"]
 ---
 
-## git clean
+# git clean
 
 wymuś(f) usunięcie wszytkich nieśledzonych(x) plików w repo, łącznie z katalogami(d), oprócz jednego(e)
 
@@ -15,10 +15,20 @@ wymuś(f) usunięcie wszytkich nieśledzonych(x) plików w repo, łącznie z kat
 git clean -f -x -d -e build
 ```
 
-## Podmoduły (submodules)
+# Podmoduły (submodules)
 
 status ignorując podmoduły
 
 ```
 git status --ignore-submodules
 ```
+
+# Specyfikacja Rewizji
+
+Diff jednego pliku jednej rewizji (specyfikować zakres składający się z jednej rewizji):
+
+```
+git diff 79e9e048^! README.md
+```
+
+
