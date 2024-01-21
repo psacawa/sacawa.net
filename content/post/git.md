@@ -28,7 +28,7 @@ git status --ignore-submodules
 Diff jednego pliku jednej rewizji (specyfikować zakres składający się z jednej rewizji):
 
 ```
-git diff 79e9e048^! README.md
+git diff 79e9e048^! README.md
 ```
 
 
