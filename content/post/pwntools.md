@@ -3,7 +3,7 @@ title_pl: "pwntools Notatki"
 title: "pwntools Notes"
 description: "Zgromadzone notatki o pwntools"
 date: 2024-01-29
-tags: ["pl", "x86", "python"]
+tags: ["pl", "x86", "python", "hacking"]
 categories: ["Notes"]
 draft: true
 ---
