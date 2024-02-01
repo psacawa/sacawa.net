@@ -31,4 +31,8 @@ Diff jednego pliku jednej rewizji (specyfikować zakres składający się z jedn
 git diff '79e9e048^!' README.md
 ```
 
+Wyszukiwanie rewizja na podstawie wyrażenia regularnego:
 
+```
+git show --name-only ":/^regex$"
+```
