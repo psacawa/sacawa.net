@@ -2,7 +2,7 @@
 title_pl: "C Notatki"
 title: "Kernel Notes"
 description: "Zgromadzone notatki o Jądrze"
-date: 2023-08-29
+date: 2024-01-07
 tags: ["pl", "linux", "c"]
 categories: ["Notes"]
 ---

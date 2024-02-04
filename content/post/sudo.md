@@ -2,7 +2,7 @@
 title_pl: "Sudo Notatki"
 title: "Sudo/PAM Notes"
 description: "Zgromadzone notatki o Sudo/PAM"
-date: 2023-08-29
+date: 2024-01-07
 tags: ["pl", "sudo", "pam"]
 categories: ["Notes"]
 ---
