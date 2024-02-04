@@ -161,6 +161,13 @@ Szupełnienie pliki pasujące do globa:
 _foo () { _arguments '-p[port]:port:_path_files -g /dev/\*\(%c\)' }
 ```
 
+Prosta lista `zsh`:
+
+```zsh
+local types=(a b c)
+_arguments '-t[types]: :($types)' '*: :_default' --
+```
+
 ### Inne
 
 Znaajdź opcję w liście argumentów `$words` i upewnij się że ma powiązany argument
