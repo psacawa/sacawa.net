@@ -36,3 +36,9 @@ Wyszukiwanie rewizja na podstawie wyrażenia regularnego:
 ```
 git show --name-only ":/^regex$"
 ```
+
+Zakres czasowe rewizji (można):
+
+```
+git log '@{2 month ago}..@'
+```
