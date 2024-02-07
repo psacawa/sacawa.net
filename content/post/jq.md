@@ -43,3 +43,9 @@ Usunęcie pewnych flag kompilatora z `compile_commands.json`:
 ```jq
 [.[]| .arguments |= [.[]|select(test("^-(W|f|m)")|not)]]
 ```
+
+Przykład użycia `with_entries`:
+
+```jq
+with_entries(select(.key != "capabilities"))
+```
