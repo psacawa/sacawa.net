@@ -21,5 +21,6 @@ Notabene trzeba odróżnić filtry ebpf podane opcją `-f` od filtrów wyświetl
 
 Dostosowanie wyjście do poszczególnych pól:
 
+```
 tshark -r error_reporting.pcap -T fields -e icmp.type
 ```
