@@ -7,6 +7,20 @@ tags: ["pl", "git"]
 categories: ["Notes"]
 ---
 
+# git commit
+
+`git commit --date=$data` ustawia datę autora. Aby natomiast ustawić datę rewizji, używamy następujące polecienie:
+
+```
+GIT_COMMITER_DATE=$data git commit
+```
+
+`$data` musi mieć *pełny* format ISO-8601. Obecny moment w tej postaci można uzyskać przez
+
+```
+date -u +%Y-%m-%dT%H:%M:%S%Z
+```
+
 # git clean
 
 wymuś(f) usunięcie wszytkich nieśledzonych(x) plików w repo, łącznie z katalogami(d), oprócz jednego(e)
