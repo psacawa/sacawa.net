@@ -82,7 +82,7 @@ href = "https://unsplash.com"
 # href =  "/archive/"
 [[params.addtional_menus]]
 title = "PROJECTS"
-href = "/projects/"
+href = "/projects"
 # [[params.addtional_menus]]
 # title = "NOTES"
 # href = "/notes/"
