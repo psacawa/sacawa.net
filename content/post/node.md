@@ -1,6 +1,6 @@
 ---
 title_pl: "Notatki Javascript/Typescript/NodeJS/NPM"
-title: "Javascript/Typescript/NodeJS/NPM Noes"
+title: "Javascript/Typescript/NodeJS/NPM Notes"
 subtitle: ""
 description: "Zgromadzone notatki o Javascript/Typescript/NodeJS/NPM"
 date: 2024-02-25
