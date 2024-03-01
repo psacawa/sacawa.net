@@ -154,6 +154,16 @@ for (int i = 0; i != argc; ++i)
   printf("%1$s at %1$p\n", argv[i]);
 ```
 
+### fopen
+
+Pewne tryby:
+
+- `r+` odczyt/zapis, zaczynając od początku pliku
+- `w+` odczyt/zapis, obcinając plik, zaczynając od początku pliku (pozycje odczytu/zapisu różnią się)
+- `a` dodawanie do pliku
+
+Warianty `w` oraz`a` tworzą pliki jeśli ich nie ma jeszcze.
+
 # Kompilatory
 
 ## gcc
