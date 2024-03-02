@@ -42,3 +42,11 @@ done
 ```
 
 W opisie opcji, pojedynczy dwukropek oznacza obowiązkowy parametr, podwójny oznacza opcjonalny parametr.
+
+## Wskazówki
+
+Debugowanie każdego kroku danego sk (ang. *Step-through debugging*) (tylko `bash`):
+
+```
+trap '(read -p "[$BASH_SOURCE:$LINENO] $BASH_COMMAND")' DEBUG
+```
