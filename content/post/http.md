@@ -8,3 +8,15 @@ image: ""
 tags: ["pl", "http", "www"]
 categories: ["Notes"]
 ---
+
+# Klienty
+
+## httpie
+
+## curl
+
+Nagłówki odpowiedzi:
+
+```
+curl -D - https://example.com
+```
