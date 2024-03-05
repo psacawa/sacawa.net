@@ -20,7 +20,7 @@ aws ec2 describe-instances \
     --query 'Reservations[].Instances[].{ID: InstanceId,Hostname: PublicDnsName,Name: Tags[?Key==`Name`].Value | [0],Type: InstanceType, Platform: Platform || `Linux`}'
 ```
 
-Zwiększenie wolumina [[1]][1]:
+Zwiększenie wolumina [[1]][ref1]:
 
 ```sh
 aws stop-instance --instance-id $INSTANCE_ID # może nie potrzebne
@@ -45,8 +45,8 @@ Nie wiedzieć czemu, ale żeby móc przekierować rekord `A` na dystrybucję Clo
 
 # Referencje
 
-[Extend a Linux file system after resizing a volume][id]
+[Extend a Linux file system after resizing a volume][ref1]
 
-[id]:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html"
+[ref1]:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html"
 
 
