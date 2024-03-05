@@ -20,7 +20,7 @@ aws ec2 describe-instances \
     --query 'Reservations[].Instances[].{ID: InstanceId,Hostname: PublicDnsName,Name: Tags[?Key==`Name`].Value | [0],Type: InstanceType, Platform: Platform || `Linux`}'
 ```
 
-Zwiększenie wolumina [1]:
+Zwiększenie wolumina [[1]][1]:
 
 ```sh
 aws stop-instance --instance-id $INSTANCE_ID # może nie potrzebne
