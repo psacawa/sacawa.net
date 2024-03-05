@@ -47,6 +47,6 @@ Nie wiedzieć czemu, ale żeby móc przekierować rekord `A` na dystrybucję Clo
 
 [Extend a Linux file system after resizing a volume][ref1]
 
-[ref1]:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html"
+- [ref1]:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html"
 
 
