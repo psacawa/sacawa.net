@@ -20,7 +20,7 @@ aws ec2 describe-instances \
     --query 'Reservations[].Instances[].{ID: InstanceId,Hostname: PublicDnsName,Name: Tags[?Key==`Name`].Value | [0],Type: InstanceType, Platform: Platform || `Linux`}'
 ```
 
-Zwiększenie wolumina:
+Zwiększenie wolumina [1]:
 
 ```sh
 aws stop-instance --instance-id $INSTANCE_ID # może nie potrzebne
@@ -42,3 +42,11 @@ sudo resize2fs /dev/nvme0n1p1
 Nie wiedzieć czemu, ale żeby móc przekierować rekord `A` na dystrybucję Cloudfront, musi być w us-east-1. Wpisujemy domenę dystrybucji.
 
 # S3
+
+# Referencje
+
+[Text][id]
+
+[id]:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html"
+
+
