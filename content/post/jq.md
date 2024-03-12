@@ -49,3 +49,9 @@ Przykład użycia `with_entries`:
 ```jq
 with_entries(select(.key != "capabilities"))
 ```
+
+Generuj listę dla API REST:
+
+```
+seq 100 | jq -s '{lsit_of_strings : map(tostring)}'
+```
