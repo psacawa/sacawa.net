@@ -16,6 +16,12 @@ Przekonwertuj `[60, 60 + 2)` sek. z mp4 na gif. `-f gif` jawnie deklaruje typ ce
 ffmpeg -ss 60.0 -t 2.0 -i calculator-recording.mp4 calculator-recording.gif
 ```
 
+Długóść ścieżki dźwiękowej/wideo:
+
+```
+ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 input.mp4
+```
+
 ## Różne
 
 Śćiągnąć ścieżkę dźwiękową z Youtube, porządkując pliki względem kolejności:
