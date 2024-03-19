@@ -36,7 +36,7 @@ Wypisz formaty:
 youtube-dl --list-formats https://www.youtube.com/watch?v=xyz
 ```
 
-Ściągnąć tylko napisy:
+Ściągnąć tylko napisy: [[1]][ref1]:
 
 ```
 youtube-dl --all-subs --skip-download https://www.youtube.com/watch?v=xyz
@@ -47,6 +47,12 @@ youtube-dl --all-subs --skip-download https://www.youtube.com/watch?v=xyz
 ```
 youtube-dl --sub-lang ru --write-auto-sub --skip-download https://www.youtube.com/watch?v=xyz
 ```
+
+# Referencje
+
+- [How to download only subtitles of videos using youtube-dl](https://superuser.com/questions/927523/how-to-download-only-subtitles-of-videos-using-youtube-dl)
+
+[ref1](https://superuser.com/questions/927523/how-to-download-only-subtitles-of-videos-using-youtube-dl)
 
 
 
