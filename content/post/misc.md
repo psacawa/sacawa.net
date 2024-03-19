@@ -50,9 +50,6 @@ youtube-dl --sub-lang ru --write-auto-sub --skip-download https://www.youtube.co
 
 # Referencje
 
-- [How to download only subtitles of videos using youtube-dl](ref1)
+- [How to download only subtitles of videos using youtube-dl][ref1]
 
-[ref1](https://superuser.com/questions/927523/how-to-download-only-subtitles-of-videos-using-youtube-dl)
-
-
-
+[ref1]:https://superuser.com/questions/927523/how-to-download-only-subtitles-of-videos-using-youtube-dl "https://superuser.com/questions/927523/how-to-download-only-subtitles-of-videos-using-youtube-dl"
