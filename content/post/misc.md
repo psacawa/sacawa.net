@@ -22,12 +22,31 @@ Długóść ścieżki dźwiękowej/wideo:
 ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 input.mp4
 ```
 
-## Różne
+## youtube-dl
 
 Śćiągnąć ścieżkę dźwiękową z Youtube, porządkując pliki względem kolejności:
 
 ```
 youtube-dl -x -o "%(playlist_index)s - %(title)s.%(ext)s" "https://www.youtube.com/watch?v=xyz&list=abc"
 ```
+
+Wypisz formaty:
+
+```
+youtube-dl --list-formats https://www.youtube.com/watch?v=xyz
+```
+
+Ściągnąć tylko napisy:
+
+```
+youtube-dl --all-subs --skip-download https://www.youtube.com/watch?v=xyz
+```
+
+Ściągnąć tylko autogenerowane napisy:
+
+```
+youtube-dl --sub-lang ru --write-auto-sub --skip-download https://www.youtube.com/watch?v=xyz
+```
+
 
 
