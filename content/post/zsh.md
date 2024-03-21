@@ -141,8 +141,14 @@ Kwalifikatory globów tylko na koniec globu. Przykład ekskluzji z kwalifikacją
 ls /usr/share/systemtap/tapset/**/*~*.stp(.)
 ```
 
-## Uzypełnienia
+## Uzypełnienia (`zshcompsys`)
 
+### `_describe`
+
+```zsh
+arr=(a b c)
+_describe -t tag 'opis dla menu' arr
+```
 ### `_arguments`
 
 Specyfikacje opjci jak `-f[force]:opis:` oczekuje parametr do argumentu, ale nie daje uzupełnienia. Opcja bez parametru opisujemy przez `-f[force]`. Zatem
