@@ -23,6 +23,12 @@ Przeszukiwanie pierwszej kolumny tablicy. Odpowiednik `div:first-child` z CSS:
 xmllint --html --xpath '//table//tr/td[1]/a/@href'  index.html
 ```
 
+Wartość atrybuty (zamiast nazwa+wartość atrybuty):
+
+```
+xmllint --xpath 'string(/a/b/c/@attr)' file.xml
+```
+
 # xmllint
 
 Też HTML:
