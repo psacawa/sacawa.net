@@ -12,3 +12,32 @@ categories: ["Notes"]
 ## Dekompilator
 
 Pseudomakra jak `CONCAT13(x,y)` oznaczają sklejanie  bajtów: w tym przypadku jednego bajta `x` z trzema bajtami `y`.
+
+## Skrypty
+
+Szablon Java:
+
+```java
+import ghidra.app.script.GhidraScript;
+public class MyGhidraScript extends GhidraScript {
+
+	@Override
+	public void run() throws Exception {
+		....
+	}
+}
+```
+
+Preskrypty są uruchamiane przed analizą, postskrypty po.
+
+### analyzeHeadless
+
+```
+analyzeHeadless myproj myproj.gpr -process mybin.exe -preScript ghidra_basics.py
+```
+
+Własne skrypty:
+
+```
+analyzeHeadless $PROJ_DIR myproj.gpr -process mybin.exe -scriptPath  $PROJ_DIR/ghidra_scripts -preScript ghidra_basics.py 
+```
