@@ -147,7 +147,9 @@ ls /usr/share/systemtap/tapset/**/*~*.stp(.)
 
 ```zsh
 arr=(a b c)
-_describe -t tag 'opis dla menu' arr
+_describe -t tag 'opcja jako lista' arr
+_describe -t tag 'opis jako łańcuch' '(a b c)'
+
 ```
 ### `_arguments`
 
