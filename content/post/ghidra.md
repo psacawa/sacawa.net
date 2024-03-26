@@ -41,3 +41,9 @@ Własne skrypty:
 ```
 analyzeHeadless $PROJ_DIR myproj.gpr -process mybin.exe -scriptPath  $PROJ_DIR/ghidra_scripts -preScript ghidra_basics.py 
 ```
+
+Analizuj importowany plik do nie zapisując projektu:
+
+```
+analyzeHeadless . nieważne.gpr -import /bin/ls -deleteProject -postScript xyz.java
+```
