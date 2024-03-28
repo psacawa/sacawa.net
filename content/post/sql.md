@@ -27,6 +27,12 @@ create table kawiarnie (id integer  not null, nazwa text  not null,  opis text  
 .import ./kawiarnie.csv kawiarnie
 ```
 
+Względny czasy. E.g. wczoraj:
+
+```sql
+select date('now', '-1 day');
+```
+
 ## Przykłady
 
 ### Stwórz kopię tablicy
