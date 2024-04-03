@@ -2,7 +2,7 @@
 title_pl: "Ghidra Notatki"
 title: "Ghidra Notes"
 subtitle: "Zgromadzone Ghidra Notatki"
-description: ""
+description: "Zgromadzone Ghidra Notatki"
 date: 2024-03-17
 image: ""
 tags: ["pl", "c", "x86", "ghidra"]
