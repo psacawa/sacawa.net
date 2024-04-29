@@ -1,11 +1,11 @@
 ---
-title_pl: "Tytuł"
-title: "Title"
-subtitle: ""
+title_pl: "Notatki o Kompilatorach"
+title: "Compiler Notes"
+subtitle: "Collected Compiler Notes"
 description: "Opis"
-date: data
+date: 2024-04-29
 image: ""
-tags: ["pl", "c"]
+tags: ["pl", "c", "c++", "compilers"]
 categories: ["Notes"]
 ---
 
