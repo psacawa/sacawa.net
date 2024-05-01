@@ -9,6 +9,14 @@ tags: ["pl", "c", "x86", "ghidra"]
 categories: ["Notes"]
 ---
 
+## Symbole
+
+Źródła `default`, `analysis`, `imported`, `user-defined`. Wbrew pozorom, ogólna funkcja odkryta podczas analizy ma źródło domyślne, ale znowu funkcja `Unwind@*` oraz rozpoznane implementacje `strchr` ze starych bibliotek itd. są oznaczone jako produkty analizy.
+
+Typy: czym się rózni etykietka instrukcji od innych etykietek?
+
+<!-- TODO 01/05/20 psacawa: finish this -->
+
 ## Dekompilator
 
 Pseudomakra jak `CONCAT13(x,y)` oznaczają sklejanie  bajtów: w tym przypadku jednego bajta `x` z trzema bajtami `y`.
