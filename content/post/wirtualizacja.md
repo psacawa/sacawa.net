@@ -11,6 +11,8 @@ categories: ["Notes"]
 
 ## qemu
 
+Jak zamontować obraz `qcow`:
+
 https://unix.stackexchange.com/questions/268460/how-to-mount-qcow2-image/598265#598265
 
 ## virtualbox
