@@ -164,6 +164,25 @@ Pewne tryby:
 
 Warianty `w` oraz`a` tworzą pliki jeśli ich nie ma jeszcze.
 
+## Inne
+
+### getopt
+
+`getopt` oraz `getopt_long` zwracają `-1` po to by oznaczać koniec przetwarzania opcji. Implementacja GNU `getopt` rozszera POSIX o tę funkcjonalność że opcję nie muszą być po kolei na linii polecenia.
+
+Przykładowe wywołanie `getopt_long`:
+
+```c
+struct option longopts[] = {
+{"force", no_argument, 0, 0}
+{"target", required_argument, 0, 0}
+{"config-file", optional_argument, 0, 0}, 
+};
+...
+int longopt_idx;
+getopt_long(argc, argv, "ft:c::", longopts, &longopt_idx);
+```
+
 # Kompilatory
 
 ## gcc
