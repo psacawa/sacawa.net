@@ -19,6 +19,7 @@ Aho, Lem, Sethi, Ullman. 3 Wydanie.
 
 - Stosuj `%define api.value.type variant` zamiast `union` dla aplikacji C++. 
 - `%verbose` tworzy pliki `.output` wyjaśniające stany parsera.
+- `%locations` potrzebne do zdefiniowania `YYLTYPE` jeśli symbole `@n` nie odnoszono się do nich jawnie .
 
 ### Pułapki 
 
