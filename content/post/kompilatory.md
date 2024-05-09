@@ -17,7 +17,16 @@ Aho, Lem, Sethi, Ullman. 3 Wydanie.
 
 ## bison
 
-Stosuj `%define api.value.type variant` zamiast `union` dla aplikacji C++.
+- Stosuj `%define api.value.type variant` zamiast `union` dla aplikacji C++. 
+- `%verbose` tworzy pliki `.output` wyjaśniające stany parsera.
+
+### Pułapki 
+
+Zasady gramatyki bez określonej akcji (np.  `expr: subexpr`)  ma domyślną akcję `{ $$ = $1; }`, skutkując błędem jeśli typy nie pasują do siebie. Skutkuje to ostrzeżeniem niby:
+
+```
+parser.y:36.5-8: ostrzeżenie: konflikt typu w domyślnej akcji: <char *> != <> [-Wother]
+```
 
 ## flex
 
