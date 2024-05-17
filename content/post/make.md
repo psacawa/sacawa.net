@@ -17,3 +17,10 @@ libc_targets = ptr xmm-demo
 $(libc_targets): %: %.o
 	ld -dynamic-linker=/lib64/ld-linux-x86-64.so.2 $< -lc -o $@
 ```
+
+Przepis na drukowanie dowolnej wartości. Korzytać poprzez np. `make print-SRCS`:
+
+```make
+print-%:
+    @echo $*=$($*)
+```
