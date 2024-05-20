@@ -141,7 +141,9 @@ Kwalifikatory globów tylko na koniec globu. Przykład ekskluzji z kwalifikacją
 ls /usr/share/systemtap/tapset/**/*~*.stp(.)
 ```
 
-## Uzypełnienia (`zshcompsys`)
+## Uzupełnienia (`zshcompsys`)
+
+Jeśli chodzi o załatwianie konfliktów pomiędzy konkurującymi implementacjami uzupełnień dla poszczególnych poleceń, pierwszy wpis w `${FPATH}` w chwili uruchomienie `compinit` wygrywa.
 
 ### `_describe`
 
