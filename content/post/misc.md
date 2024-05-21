@@ -30,10 +30,11 @@ ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:no
 youtube-dl -x -o "%(playlist_index)s - %(title)s.%(ext)s" "https://www.youtube.com/watch?v=xyz&list=abc"
 ```
 
-Wypisz formaty:
+Wypisz formaty z identyfikatorami i ściągnij wybrana rozdzielczość:
 
 ```
 youtube-dl --list-formats https://www.youtube.com/watch?v=xyz
+youtube-dl -f $id https://www.youtube.com/watch?v=xyz
 ```
 
 Ściągnąć tylko napisy: [[1]][ref1]:
