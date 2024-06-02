@@ -13,7 +13,16 @@ categories: ["Notes"]
 
 Opcje jako zmienne: `let b:ft = &ft`
 
-<!-- TODO 20/08/20 psacawa: finish this -->
+Z niejasnych przyczyn, nie da się  używać zmiennych w poleceniach. Zamiast tego używamy `exec`
+
+```vim
+" nie działa
+" tabedit s:vimrc_dir . 'cocrc'
+
+" działa
+exec 'tabedit ' . s:vimrc_dir . 'cocrc'
+```
+
 
 ## Wtyczki
 
@@ -37,7 +46,7 @@ Opcje dla urywków są opisane w podrozdziale `UltiSnips-transformations`. Najwa
 
 ## Autopolecenia i Autogroupy (ang. autocommand/autogroup)
 
-````
+```
 augroup AutoZapisPlikGrupa
   autocmd TextChanged,InsertLeave * if &buftype == "" | write | endif
 augroup END
@@ -48,4 +57,3 @@ By usunąć grupę, trzeba najpierw ręcznie usunąć autopolecenie w nim zawart
 autocmd! AutoZapisPlikGrupa TextChanged,InsertLeave
 augroup! AutoZapisPlikGrupa
 ```
-````
